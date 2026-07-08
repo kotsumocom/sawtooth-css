@@ -1,8 +1,19 @@
 /**
+ * @module
  * Sawtooth CSS — カスタマイズジェネレータ
  *
  * テーマ設定に基づいてカスタム CSS を生成する。
  * Deno Fresh の dev.ts に組み込んで使用する。
+ *
+ * @example
+ * ```ts
+ * import { generateSawtoothCSS } from "@kotsumo/sawtooth-css/generate";
+ *
+ * await generateSawtoothCSS({
+ *   output: "./static/sawtooth.css",
+ *   theme: { colors: { primary: "#6750A4" } },
+ * });
+ * ```
  */
 
 import * as path from "jsr:@std/path@1";

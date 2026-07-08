@@ -1,7 +1,15 @@
 /**
+ * @module
  * Sawtooth CSS — ゼロコンフィグセットアップ
  *
  * プリビルトの CSS ファイルを指定パスにコピーする。
+ *
+ * @example
+ * ```ts
+ * import { setupSawtoothCSS } from "@kotsumo/sawtooth-css/setup";
+ *
+ * await setupSawtoothCSS("./static/sawtooth.css");
+ * ```
  */
 
 import * as path from "jsr:@std/path@1";

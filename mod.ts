@@ -1,7 +1,18 @@
 /**
- * Sawtooth CSS — メインエントリ
+ * @module
+ * Sawtooth CSS — MD3 準拠の依存ゼロ CSS デザインシステム
  *
- * 型定義とデフォルト設定の re-export
+ * Deno Fresh + Zag.js と組み合わせて使用する。
+ * テーマ設定の型定義と CSS 生成オプションを提供する。
+ *
+ * @example
+ * ```ts
+ * import type { SawtoothTheme, GenerateOptions } from "@kotsumo/sawtooth-css";
+ *
+ * const theme: SawtoothTheme = {
+ *   colors: { primary: "#6750A4" },
+ * };
+ * ```
  */
 
 export type { ColorThemeConfig } from "./src/tokens/colors.ts";
