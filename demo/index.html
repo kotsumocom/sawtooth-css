@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sawtooth CSS — コンポーネントデモ</title>
     <link rel="stylesheet" href="/sawtooth.css">
+    <!-- Lucide Icons (ISC License) — デモ用 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
     /* デモ固有のスタイル */
     .demo-section {
@@ -559,7 +561,7 @@
         <div data-scope="clipboard" data-part="root">
           <div data-scope="clipboard" data-part="control">
             <input data-scope="clipboard" data-part="input" value="https://jsr.io/@kotsumo/sawtooth-css" readonly style="width: 22rem;">
-            <button data-scope="clipboard" data-part="trigger">📋 コピー</button>
+            <button data-scope="clipboard" data-part="trigger"><i data-lucide="copy" style="width:16px;height:16px;"></i> コピー</button>
           </div>
         </div>
       </div>
@@ -573,7 +575,7 @@
           <div data-scope="accordion" data-part="item">
             <button data-scope="accordion" data-part="item-trigger" data-state="open">
               Sawtooth CSS とは？
-              <span data-scope="accordion" data-part="item-indicator">▼</span>
+              <span data-scope="accordion" data-part="item-indicator">−</span>
             </button>
             <div data-scope="accordion" data-part="item-content" data-state="open" style="padding-bottom: var(--st-sys-spacing-4);">
               MD3 準拠の依存ゼロ CSS デザインシステムです。Deno Fresh と Zag.js の組み合わせに最適化されています。
@@ -582,13 +584,13 @@
           <div data-scope="accordion" data-part="item">
             <button data-scope="accordion" data-part="item-trigger" data-state="closed">
               どのように導入しますか？
-              <span data-scope="accordion" data-part="item-indicator">▶</span>
+              <span data-scope="accordion" data-part="item-indicator">+</span>
             </button>
           </div>
           <div data-scope="accordion" data-part="item">
             <button data-scope="accordion" data-part="item-trigger" data-state="closed">
               テーマのカスタマイズ方法は？
-              <span data-scope="accordion" data-part="item-indicator">▶</span>
+              <span data-scope="accordion" data-part="item-indicator">+</span>
             </button>
           </div>
         </div>
@@ -611,7 +613,7 @@
       <!-- Steps -->
       <div class="demo-section">
         <h2>🪜 Steps</h2>
-        <div data-scope="steps" data-part="root" style="max-width: 32rem;">
+        <div data-scope="steps" data-part="root" style="max-width: 48rem;">
           <div data-scope="steps" data-part="list">
             <div data-scope="steps" data-part="item" data-state="complete">
               <div data-scope="steps" data-part="trigger">
@@ -671,7 +673,7 @@
         <div data-scope="file-upload" data-part="root" style="max-width: 28rem;">
           <div data-scope="file-upload" data-part="label">ファイルを選択</div>
           <div data-scope="file-upload" data-part="dropzone">
-            <span style="font-size: 2rem;">📁</span>
+            <i data-lucide="upload-cloud" style="width:2.5rem;height:2.5rem;color:var(--st-sys-color-primary);"></i>
             <span>ここにファイルをドラッグ&ドロップ</span>
             <button data-scope="file-upload" data-part="trigger">ファイルを選択</button>
           </div>
@@ -679,7 +681,7 @@
             <div data-scope="file-upload" data-part="item">
               <span data-scope="file-upload" data-part="item-name">document.pdf</span>
               <span data-scope="file-upload" data-part="item-size-text">2.4 MB</span>
-              <button data-scope="file-upload" data-part="item-delete-trigger">×</button>
+              <button data-scope="file-upload" data-part="item-delete-trigger"><i data-lucide="x" style="width:16px;height:16px;"></i></button>
             </div>
           </div>
         </div>
@@ -692,7 +694,7 @@
           <div data-scope="editable" data-part="label">表示名</div>
           <div data-scope="editable" data-part="area">
             <span data-scope="editable" data-part="preview">クリックで編集</span>
-            <button data-scope="editable" data-part="edit-trigger">✎</button>
+            <button data-scope="editable" data-part="edit-trigger"><i data-lucide="pencil" style="width:16px;height:16px;"></i></button>
           </div>
         </div>
       </div>
@@ -726,7 +728,7 @@
             <span data-scope="timer" data-part="separator">:</span>
             <span data-scope="timer" data-part="item">30</span>
           </div>
-          <div data-scope="timer" data-part="control">
+          <div data-scope="timer" data-part="control" style="margin-top: var(--st-sys-spacing-4);">
             <button data-scope="timer" data-part="action-trigger">▶ 開始</button>
           </div>
         </div>
@@ -740,24 +742,24 @@
             <li data-scope="tree-view" data-part="branch" data-state="open">
               <div data-scope="tree-view" data-part="branch-control">
                 <span data-scope="tree-view" data-part="branch-indicator">▶</span>
-                📂 src
+                <i data-lucide="folder" style="width:16px;height:16px;"></i> src
               </div>
               <ul data-scope="tree-view" data-part="branch-content" data-state="open">
                 <li data-scope="tree-view" data-part="branch" data-state="open">
                   <div data-scope="tree-view" data-part="branch-control">
                     <span data-scope="tree-view" data-part="branch-indicator">▶</span>
-                    📂 css
+                    <i data-lucide="folder" style="width:16px;height:16px;"></i> css
                   </div>
                   <ul data-scope="tree-view" data-part="branch-content" data-state="open">
-                    <li data-scope="tree-view" data-part="item">📄 main.css</li>
-                    <li data-scope="tree-view" data-part="item" data-selected>📄 _button.css</li>
+                    <li data-scope="tree-view" data-part="item"><i data-lucide="file" style="width:14px;height:14px;"></i> main.css</li>
+                    <li data-scope="tree-view" data-part="item" data-selected><i data-lucide="file" style="width:14px;height:14px;"></i> _button.css</li>
                   </ul>
                 </li>
-                <li data-scope="tree-view" data-part="item">📄 build.ts</li>
+                <li data-scope="tree-view" data-part="item"><i data-lucide="file" style="width:14px;height:14px;"></i> build.ts</li>
               </ul>
             </li>
-            <li data-scope="tree-view" data-part="item">📄 deno.json</li>
-            <li data-scope="tree-view" data-part="item">📄 mod.ts</li>
+            <li data-scope="tree-view" data-part="item"><i data-lucide="file" style="width:14px;height:14px;"></i> deno.json</li>
+            <li data-scope="tree-view" data-part="item"><i data-lucide="file" style="width:14px;height:14px;"></i> mod.ts</li>
           </ul>
         </div>
       </div>
@@ -797,6 +799,9 @@
         btn.textContent = "☀️ ライト";
       }
     }
+
+    // Lucide アイコンを初期化
+    lucide.createIcons();
     </script>
   </body>
 </html>
