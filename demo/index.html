@@ -334,10 +334,453 @@
         </div>
       </div>
 
+      <!-- ===== Phase 1: Form Controls ===== -->
+
+      <!-- Checkbox -->
+      <div class="demo-section">
+        <h2>☑️ Checkbox</h2>
+        <div class="demo-row">
+          <label data-scope="checkbox" data-part="root" data-state="checked">
+            <div data-scope="checkbox" data-part="control" data-state="checked">✓</div>
+            <span data-scope="checkbox" data-part="label">チェック済み</span>
+          </label>
+          <label data-scope="checkbox" data-part="root" data-state="unchecked">
+            <div data-scope="checkbox" data-part="control" data-state="unchecked"></div>
+            <span data-scope="checkbox" data-part="label">未チェック</span>
+          </label>
+          <label data-scope="checkbox" data-part="root" data-state="indeterminate">
+            <div data-scope="checkbox" data-part="control" data-state="indeterminate">–</div>
+            <span data-scope="checkbox" data-part="label">不確定</span>
+          </label>
+          <label data-scope="checkbox" data-part="root" data-disabled>
+            <div data-scope="checkbox" data-part="control" data-state="unchecked" data-disabled></div>
+            <span data-scope="checkbox" data-part="label">無効</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Switch -->
+      <div class="demo-section">
+        <h2>🔀 Switch</h2>
+        <div class="demo-row">
+          <label data-scope="switch" data-part="root" data-state="checked">
+            <span data-scope="switch" data-part="label">ON</span>
+            <span data-scope="switch" data-part="control" data-state="checked">
+              <span data-scope="switch" data-part="thumb" data-state="checked"></span>
+            </span>
+          </label>
+          <label data-scope="switch" data-part="root" data-state="unchecked">
+            <span data-scope="switch" data-part="label">OFF</span>
+            <span data-scope="switch" data-part="control" data-state="unchecked">
+              <span data-scope="switch" data-part="thumb" data-state="unchecked"></span>
+            </span>
+          </label>
+          <label data-scope="switch" data-part="root" data-disabled>
+            <span data-scope="switch" data-part="label">無効</span>
+            <span data-scope="switch" data-part="control" data-state="unchecked" data-disabled>
+              <span data-scope="switch" data-part="thumb" data-state="unchecked"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Radio Group -->
+      <div class="demo-section">
+        <h2>🔘 Radio Group</h2>
+        <div data-scope="radio-group" data-part="root">
+          <div data-scope="radio-group" data-part="label">お好みの色</div>
+          <div class="demo-row">
+            <label data-scope="radio-group" data-part="item" data-state="checked">
+              <div data-scope="radio-group" data-part="item-control" data-state="checked"></div>
+              <span data-scope="radio-group" data-part="item-text">レッド</span>
+            </label>
+            <label data-scope="radio-group" data-part="item" data-state="unchecked">
+              <div data-scope="radio-group" data-part="item-control" data-state="unchecked"></div>
+              <span data-scope="radio-group" data-part="item-text">ブルー</span>
+            </label>
+            <label data-scope="radio-group" data-part="item" data-state="unchecked">
+              <div data-scope="radio-group" data-part="item-control" data-state="unchecked"></div>
+              <span data-scope="radio-group" data-part="item-text">グリーン</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toggle -->
+      <div class="demo-section">
+        <h2>🔲 Toggle</h2>
+        <div class="demo-row">
+          <button data-scope="toggle" data-part="root" data-state="on">★ お気に入り ON</button>
+          <button data-scope="toggle" data-part="root" data-state="off">☆ お気に入り OFF</button>
+        </div>
+      </div>
+
+      <!-- Toggle Group -->
+      <div class="demo-section">
+        <h2>🔳 Toggle Group</h2>
+        <div data-scope="toggle-group" data-part="root">
+          <button data-scope="toggle-group" data-part="item" data-state="on">太字</button>
+          <button data-scope="toggle-group" data-part="item" data-state="off">斜体</button>
+          <button data-scope="toggle-group" data-part="item" data-state="off">下線</button>
+        </div>
+      </div>
+
+      <!-- Slider -->
+      <div class="demo-section">
+        <h2>🎚️ Slider</h2>
+        <div data-scope="slider" data-part="root" style="width: 20rem;">
+          <div data-scope="slider" data-part="label">音量</div>
+          <div data-scope="slider" data-part="value-text">50%</div>
+          <div data-scope="slider" data-part="control">
+            <div data-scope="slider" data-part="track">
+              <div data-scope="slider" data-part="range" style="width: 50%;"></div>
+            </div>
+            <div data-scope="slider" data-part="thumb" style="left: 50%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Number Input -->
+      <div class="demo-section">
+        <h2>🔢 Number Input</h2>
+        <div data-scope="number-input" data-part="root">
+          <div data-scope="number-input" data-part="label">数量</div>
+          <div data-scope="number-input" data-part="control">
+            <button data-scope="number-input" data-part="decrement-trigger">−</button>
+            <input data-scope="number-input" data-part="input" value="5" style="width: 4rem; text-align: center;">
+            <button data-scope="number-input" data-part="increment-trigger">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pin Input -->
+      <div class="demo-section">
+        <h2>🔑 Pin Input</h2>
+        <div data-scope="pin-input" data-part="root">
+          <div data-scope="pin-input" data-part="label">認証コード</div>
+          <div data-scope="pin-input" data-part="control">
+            <input data-scope="pin-input" data-part="input" maxlength="1" value="4" style="width: 3rem;">
+            <input data-scope="pin-input" data-part="input" maxlength="1" value="2" style="width: 3rem;">
+            <input data-scope="pin-input" data-part="input" maxlength="1" style="width: 3rem;">
+            <input data-scope="pin-input" data-part="input" maxlength="1" style="width: 3rem;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="demo-section">
+        <h2>🔒 Password Input</h2>
+        <div data-scope="password-input" data-part="root">
+          <div data-scope="password-input" data-part="label">パスワード</div>
+          <div data-scope="password-input" data-part="control">
+            <input data-scope="password-input" data-part="input" type="password" value="secretpassword">
+            <button data-scope="password-input" data-part="trigger" data-state="hidden">👁</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tags Input -->
+      <div class="demo-section">
+        <h2>🏷️ Tags Input</h2>
+        <div data-scope="tags-input" data-part="root">
+          <div data-scope="tags-input" data-part="label">タグ</div>
+          <div data-scope="tags-input" data-part="control">
+            <span data-scope="tags-input" data-part="item" data-value="Deno">
+              <span data-scope="tags-input" data-part="item-text">Deno</span>
+              <button data-scope="tags-input" data-part="item-delete-trigger">×</button>
+            </span>
+            <span data-scope="tags-input" data-part="item" data-value="Fresh">
+              <span data-scope="tags-input" data-part="item-text">Fresh</span>
+              <button data-scope="tags-input" data-part="item-delete-trigger">×</button>
+            </span>
+            <span data-scope="tags-input" data-part="item" data-value="Zag.js">
+              <span data-scope="tags-input" data-part="item-text">Zag.js</span>
+              <button data-scope="tags-input" data-part="item-delete-trigger">×</button>
+            </span>
+            <input data-scope="tags-input" data-part="input" placeholder="タグを追加...">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Phase 2: Overlay + Feedback ===== -->
+
+      <!-- Tooltip (static preview) -->
+      <div class="demo-section">
+        <h2>💬 Tooltip</h2>
+        <div class="demo-row" style="position: relative;">
+          <div data-scope="tooltip" data-part="content" data-state="open" style="position: relative; display: inline-block;">
+            ツールチップのテキスト
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress (Linear) -->
+      <div class="demo-section">
+        <h2>📊 Progress (Linear)</h2>
+        <div style="max-width: 24rem;">
+          <div data-scope="progress" data-part="root">
+            <div data-scope="progress" data-part="label">
+              <span>アップロード中...</span>
+              <span data-scope="progress" data-part="value-text">65%</span>
+            </div>
+            <div data-scope="progress" data-part="track">
+              <div data-scope="progress" data-part="range" style="width: 65%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress (Circular) — SVG -->
+      <div class="demo-section">
+        <h2>🔄 Progress (Circular)</h2>
+        <div class="demo-row">
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <circle data-scope="progress" data-part="circle-track"
+              cx="24" cy="24" r="20" fill="none" stroke-width="4" />
+            <circle data-scope="progress" data-part="circle-range"
+              cx="24" cy="24" r="20" fill="none" stroke-width="4"
+              stroke-dasharray="125.6" stroke-dashoffset="44"
+              transform="rotate(-90 24 24)" />
+          </svg>
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <circle data-scope="progress" data-part="circle-track"
+              cx="24" cy="24" r="20" fill="none" stroke-width="4" />
+            <circle data-scope="progress" data-part="circle-range" data-state="indeterminate"
+              cx="24" cy="24" r="20" fill="none" stroke-width="4"
+              stroke-dasharray="125.6" stroke-dashoffset="44"
+              transform="rotate(-90 24 24)" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Clipboard -->
+      <div class="demo-section">
+        <h2>📋 Clipboard</h2>
+        <div data-scope="clipboard" data-part="root">
+          <div data-scope="clipboard" data-part="control">
+            <input data-scope="clipboard" data-part="input" value="https://jsr.io/@kotsumo/sawtooth-css" readonly style="width: 22rem;">
+            <button data-scope="clipboard" data-part="trigger">📋 コピー</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Phase 3: Navigation + Layout ===== -->
+
+      <!-- Accordion -->
+      <div class="demo-section">
+        <h2>🪗 Accordion</h2>
+        <div data-scope="accordion" data-part="root" style="max-width: 28rem;">
+          <div data-scope="accordion" data-part="item">
+            <button data-scope="accordion" data-part="item-trigger" data-state="open">
+              Sawtooth CSS とは？
+              <span data-scope="accordion" data-part="item-indicator">▼</span>
+            </button>
+            <div data-scope="accordion" data-part="item-content" data-state="open" style="padding-bottom: var(--st-sys-spacing-4);">
+              MD3 準拠の依存ゼロ CSS デザインシステムです。Deno Fresh と Zag.js の組み合わせに最適化されています。
+            </div>
+          </div>
+          <div data-scope="accordion" data-part="item">
+            <button data-scope="accordion" data-part="item-trigger" data-state="closed">
+              どのように導入しますか？
+              <span data-scope="accordion" data-part="item-indicator">▶</span>
+            </button>
+          </div>
+          <div data-scope="accordion" data-part="item">
+            <button data-scope="accordion" data-part="item-trigger" data-state="closed">
+              テーマのカスタマイズ方法は？
+              <span data-scope="accordion" data-part="item-indicator">▶</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="demo-section">
+        <h2>📄 Pagination</h2>
+        <div data-scope="pagination" data-part="root">
+          <button data-scope="pagination" data-part="prev-trigger">◀</button>
+          <button data-scope="pagination" data-part="item">1</button>
+          <button data-scope="pagination" data-part="item" data-selected>2</button>
+          <button data-scope="pagination" data-part="item">3</button>
+          <span data-scope="pagination" data-part="ellipsis">…</span>
+          <button data-scope="pagination" data-part="item">10</button>
+          <button data-scope="pagination" data-part="next-trigger">▶</button>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="demo-section">
+        <h2>🪜 Steps</h2>
+        <div data-scope="steps" data-part="root" style="max-width: 32rem;">
+          <div data-scope="steps" data-part="list">
+            <div data-scope="steps" data-part="item" data-state="complete">
+              <div data-scope="steps" data-part="trigger">
+                <div data-scope="steps" data-part="indicator">✓</div>
+                <span>アカウント</span>
+              </div>
+            </div>
+            <div data-scope="steps" data-part="separator" data-complete></div>
+            <div data-scope="steps" data-part="item" data-state="current">
+              <div data-scope="steps" data-part="trigger">
+                <div data-scope="steps" data-part="indicator">2</div>
+                <span>プロフィール</span>
+              </div>
+            </div>
+            <div data-scope="steps" data-part="separator"></div>
+            <div data-scope="steps" data-part="item" data-state="incomplete">
+              <div data-scope="steps" data-part="trigger">
+                <div data-scope="steps" data-part="indicator">3</div>
+                <span>確認</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segmented Control -->
+      <div class="demo-section">
+        <h2>🔀 Segmented Control</h2>
+        <div data-scope="segmented-control" data-part="root">
+          <div data-scope="segmented-control" data-part="indicator" style="left: 4px; width: calc(33% - 4px);"></div>
+          <button data-scope="segmented-control" data-part="item" data-state="checked">日</button>
+          <button data-scope="segmented-control" data-part="item" data-state="unchecked">週</button>
+          <button data-scope="segmented-control" data-part="item" data-state="unchecked">月</button>
+        </div>
+      </div>
+
+      <!-- ===== Phase 4: Advanced Input + Pickers ===== -->
+
+      <!-- Rating Group -->
+      <div class="demo-section">
+        <h2>⭐ Rating Group</h2>
+        <div data-scope="rating-group" data-part="root">
+          <div data-scope="rating-group" data-part="label">評価</div>
+          <div data-scope="rating-group" data-part="control">
+            <span data-scope="rating-group" data-part="item" data-highlighted style="font-size:1.5rem;">★</span>
+            <span data-scope="rating-group" data-part="item" data-highlighted style="font-size:1.5rem;">★</span>
+            <span data-scope="rating-group" data-part="item" data-highlighted style="font-size:1.5rem;">★</span>
+            <span data-scope="rating-group" data-part="item" data-highlighted style="font-size:1.5rem;">★</span>
+            <span data-scope="rating-group" data-part="item" style="font-size:1.5rem;">☆</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- File Upload -->
+      <div class="demo-section">
+        <h2>📂 File Upload</h2>
+        <div data-scope="file-upload" data-part="root" style="max-width: 28rem;">
+          <div data-scope="file-upload" data-part="label">ファイルを選択</div>
+          <div data-scope="file-upload" data-part="dropzone">
+            <span style="font-size: 2rem;">📁</span>
+            <span>ここにファイルをドラッグ&ドロップ</span>
+            <button data-scope="file-upload" data-part="trigger">ファイルを選択</button>
+          </div>
+          <div data-scope="file-upload" data-part="item-group">
+            <div data-scope="file-upload" data-part="item">
+              <span data-scope="file-upload" data-part="item-name">document.pdf</span>
+              <span data-scope="file-upload" data-part="item-size-text">2.4 MB</span>
+              <button data-scope="file-upload" data-part="item-delete-trigger">×</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editable -->
+      <div class="demo-section">
+        <h2>✏️ Editable</h2>
+        <div data-scope="editable" data-part="root">
+          <div data-scope="editable" data-part="label">表示名</div>
+          <div data-scope="editable" data-part="area">
+            <span data-scope="editable" data-part="preview">クリックで編集</span>
+            <button data-scope="editable" data-part="edit-trigger">✎</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Phase 5: Special + Visual ===== -->
+
+      <!-- Avatar -->
+      <div class="demo-section">
+        <h2>👤 Avatar</h2>
+        <div class="demo-row">
+          <div data-scope="avatar" data-part="root">
+            <div data-scope="avatar" data-part="fallback">田</div>
+          </div>
+          <div data-scope="avatar" data-part="root">
+            <div data-scope="avatar" data-part="fallback">山</div>
+          </div>
+          <div data-scope="avatar" data-part="root">
+            <div data-scope="avatar" data-part="fallback">鈴</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div class="demo-section">
+        <h2>⏱️ Timer</h2>
+        <div data-scope="timer" data-part="root">
+          <div data-scope="timer" data-part="area">
+            <span data-scope="timer" data-part="item">02</span>
+            <span data-scope="timer" data-part="separator">:</span>
+            <span data-scope="timer" data-part="item">45</span>
+            <span data-scope="timer" data-part="separator">:</span>
+            <span data-scope="timer" data-part="item">30</span>
+          </div>
+          <div data-scope="timer" data-part="control">
+            <button data-scope="timer" data-part="action-trigger">▶ 開始</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tree View -->
+      <div class="demo-section">
+        <h2>🌲 Tree View</h2>
+        <div data-scope="tree-view" data-part="root" style="max-width: 20rem;">
+          <ul data-scope="tree-view" data-part="tree">
+            <li data-scope="tree-view" data-part="branch" data-state="open">
+              <div data-scope="tree-view" data-part="branch-control">
+                <span data-scope="tree-view" data-part="branch-indicator">▶</span>
+                📂 src
+              </div>
+              <ul data-scope="tree-view" data-part="branch-content" data-state="open">
+                <li data-scope="tree-view" data-part="branch" data-state="open">
+                  <div data-scope="tree-view" data-part="branch-control">
+                    <span data-scope="tree-view" data-part="branch-indicator">▶</span>
+                    📂 css
+                  </div>
+                  <ul data-scope="tree-view" data-part="branch-content" data-state="open">
+                    <li data-scope="tree-view" data-part="item">📄 main.css</li>
+                    <li data-scope="tree-view" data-part="item" data-selected>📄 _button.css</li>
+                  </ul>
+                </li>
+                <li data-scope="tree-view" data-part="item">📄 build.ts</li>
+              </ul>
+            </li>
+            <li data-scope="tree-view" data-part="item">📄 deno.json</li>
+            <li data-scope="tree-view" data-part="item">📄 mod.ts</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Angle Slider -->
+      <div class="demo-section">
+        <h2>🎛️ Angle Slider</h2>
+        <div data-scope="angle-slider" data-part="root">
+          <div data-scope="angle-slider" data-part="label">回転角度</div>
+          <div data-scope="angle-slider" data-part="control">
+            <div data-scope="angle-slider" data-part="thumb" style="top: 10%; left: 85%;"></div>
+          </div>
+          <div data-scope="angle-slider" data-part="value-text">45°</div>
+        </div>
+      </div>
+
       <!-- Footer -->
       <footer
         style="text-align: center; padding: var(--st-sys-spacing-8) 0; color: var(--st-sys-color-on-surface-variant); border-top: 1px solid var(--st-sys-color-outline-variant);">
         <p>Sawtooth CSS v0.1.0 — Deno Fresh + Zag.js デザインシステム</p>
+        <p style="margin-top: var(--st-sys-spacing-2); font-size: var(--st-sys-typescale-body-small-size);">
+          47 コンポーネント対応 | MIT License | <a href="https://github.com/kotsumocom/sawtooth-css" style="color: var(--st-sys-color-primary);">GitHub</a>
+        </p>
       </footer>
     </div>
 
