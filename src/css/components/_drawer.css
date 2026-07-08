@@ -1,0 +1,137 @@
+/* ==========================================================
+ * Sawtooth CSS — Drawer Component (Zag.js) [Beta]
+ * dialog スコープを再利用（Drawer は Dialog のバリアント）
+ * ========================================================== */
+
+/* Drawer uses [data-scope="dialog"] with placement variants */
+
+/* --- Drawer-specific positioner (edge-anchored) --- */
+.st-drawer [data-scope="dialog"][data-part="positioner"],
+[data-scope="dialog"][data-part="positioner"][data-placement] {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  display: flex;
+}
+
+/* Right (default) */
+[data-scope="dialog"][data-part="positioner"][data-placement="right"] {
+  justify-content: flex-end;
+}
+
+/* Left */
+[data-scope="dialog"][data-part="positioner"][data-placement="left"] {
+  justify-content: flex-start;
+}
+
+/* Bottom */
+[data-scope="dialog"][data-part="positioner"][data-placement="bottom"] {
+  align-items: flex-end;
+}
+
+/* Top */
+[data-scope="dialog"][data-part="positioner"][data-placement="top"] {
+  align-items: flex-start;
+}
+
+/* --- Drawer content (override dialog content for edge) --- */
+.st-drawer [data-scope="dialog"][data-part="content"],
+[data-scope="dialog"][data-part="content"][data-placement] {
+  border-radius: 0;
+  max-width: none;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Right/Left drawers */
+[data-scope="dialog"][data-part="content"][data-placement="right"],
+[data-scope="dialog"][data-part="content"][data-placement="left"] {
+  width: 22.5rem; /* 360px */
+  height: 100vh;
+}
+
+/* Top/Bottom drawers */
+[data-scope="dialog"][data-part="content"][data-placement="bottom"],
+[data-scope="dialog"][data-part="content"][data-placement="top"] {
+  width: 100vw;
+  max-height: 60vh;
+}
+
+/* --- Slide animations --- */
+[data-scope="dialog"][data-part="content"][data-placement="right"][data-state="open"] {
+  animation: st-drawer-slide-right-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+[data-scope="dialog"][data-part="content"][data-placement="right"][data-state="closed"] {
+  animation: st-drawer-slide-right-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+[data-scope="dialog"][data-part="content"][data-placement="left"][data-state="open"] {
+  animation: st-drawer-slide-left-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+[data-scope="dialog"][data-part="content"][data-placement="left"][data-state="closed"] {
+  animation: st-drawer-slide-left-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+[data-scope="dialog"][data-part="content"][data-placement="bottom"][data-state="open"] {
+  animation: st-drawer-slide-bottom-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+[data-scope="dialog"][data-part="content"][data-placement="bottom"][data-state="closed"] {
+  animation: st-drawer-slide-bottom-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+@keyframes st-drawer-slide-right-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes st-drawer-slide-right-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes st-drawer-slide-left-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes st-drawer-slide-left-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes st-drawer-slide-bottom-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes st-drawer-slide-bottom-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

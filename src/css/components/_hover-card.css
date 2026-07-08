@@ -1,0 +1,33 @@
+/* ==========================================================
+ * Sawtooth CSS — Hover Card Component (Zag.js)
+ * [data-scope="hover-card"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="hover-card"][data-part="positioner"] {
+  z-index: 50;
+}
+
+[data-scope="hover-card"][data-part="content"] {
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-md);
+  box-shadow: var(--st-sys-elevation-level2);
+  padding: var(--st-sys-spacing-4);
+  min-width: 12.5rem;
+  max-width: 20rem;
+  outline: none;
+}
+
+[data-scope="hover-card"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="hover-card"][data-part="content"][data-state="closed"] {
+  animation: st-fade-out var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+[data-scope="hover-card"][data-part="arrow"] {
+  --arrow-size: 8px;
+  --arrow-background: var(--st-sys-color-surface-container);
+}

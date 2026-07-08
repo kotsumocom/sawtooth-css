@@ -43,5 +43,17 @@
 @import "./components/_password-input.css";
 @import "./components/_tags-input.css";
 
+/* --- 3c. Components (Phase 2: Overlay + Feedback) --- */
+@import "./components/_tooltip.css";
+@import "./components/_popover.css";
+@import "./components/_hover-card.css";
+@import "./components/_toast.css";
+@import "./components/_drawer.css";
+@import "./components/_progress.css";
+@import "./components/_progress-circular.css";
+@import "./components/_clipboard.css";
+@import "./components/_presence.css";
+@import "./components/_qr-code.css";
+
 /* --- 4. Utilities --- */
 @import "./utilities/_layout.css";

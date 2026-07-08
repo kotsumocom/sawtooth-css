@@ -1,0 +1,21 @@
+/* ==========================================================
+ * Sawtooth CSS — QR Code Component (Zag.js)
+ * [data-scope="qr-code"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="qr-code"][data-part="root"] {
+  display: inline-flex;
+  padding: var(--st-sys-spacing-3);
+  background-color: white;
+  border-radius: var(--st-sys-shape-corner-md);
+  box-shadow: var(--st-sys-elevation-level1);
+}
+
+[data-scope="qr-code"][data-part="frame"] {
+  width: 8rem;
+  height: 8rem;
+}
+
+[data-scope="qr-code"][data-part="pattern"] {
+  fill: #000000;
+}

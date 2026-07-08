@@ -40,6 +40,17 @@ const COMPONENT_FILES: Record<string, string> = {
   "pin-input": "_pin-input.css",
   "password-input": "_password-input.css",
   "tags-input": "_tags-input.css",
+  /* Phase 2: Overlay + Feedback */
+  "tooltip": "_tooltip.css",
+  "popover": "_popover.css",
+  "hover-card": "_hover-card.css",
+  "toast": "_toast.css",
+  "drawer": "_drawer.css",
+  "progress": "_progress.css",
+  "progress-circular": "_progress-circular.css",
+  "clipboard": "_clipboard.css",
+  "presence": "_presence.css",
+  "qr-code": "_qr-code.css",
 };
 
 /**

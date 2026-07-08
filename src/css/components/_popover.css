@@ -1,0 +1,72 @@
+/* ==========================================================
+ * Sawtooth CSS — Popover Component (Zag.js)
+ * [data-scope="popover"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="popover"][data-part="positioner"] {
+  z-index: 50;
+}
+
+[data-scope="popover"][data-part="content"] {
+  position: relative;
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-md);
+  box-shadow: var(--st-sys-elevation-level3);
+  padding: var(--st-sys-spacing-4);
+  min-width: 12.5rem;
+  max-width: 22.5rem;
+  outline: none;
+}
+
+[data-scope="popover"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="popover"][data-part="content"][data-state="closed"] {
+  animation: st-fade-out var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+[data-scope="popover"][data-part="title"] {
+  font-family: var(--st-sys-typescale-title-medium-font);
+  font-size: var(--st-sys-typescale-title-medium-size);
+  font-weight: var(--st-sys-typescale-title-medium-weight);
+  color: var(--st-sys-color-on-surface);
+  margin-bottom: var(--st-sys-spacing-2);
+}
+
+[data-scope="popover"][data-part="description"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="popover"][data-part="close-trigger"] {
+  position: absolute;
+  top: var(--st-sys-spacing-2);
+  right: var(--st-sys-spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="popover"][data-part="close-trigger"]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-surface-variant) 8%,
+    transparent
+  );
+}
+
+[data-scope="popover"][data-part="arrow"] {
+  --arrow-size: 8px;
+  --arrow-background: var(--st-sys-color-surface-container);
+}

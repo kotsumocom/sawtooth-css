@@ -1,0 +1,136 @@
+/* ==========================================================
+ * Sawtooth CSS — Toast Component (Zag.js)
+ * [data-scope="toast"] セレクタ対応
+ * ========================================================== */
+
+/* --- Group (toast container — positioned fixed) --- */
+[data-scope="toast"][data-part="group"] {
+  position: fixed;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2);
+  padding: var(--st-sys-spacing-4);
+  max-width: 25rem; /* 400px */
+  pointer-events: none;
+}
+
+/* --- Root (individual toast) --- */
+[data-scope="toast"][data-part="root"] {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--st-sys-spacing-3);
+  padding: var(--st-sys-spacing-4);
+  background-color: var(--st-sys-color-inverse-surface);
+  color: var(--st-sys-color-inverse-on-surface);
+  border-radius: var(--st-sys-shape-corner-md);
+  box-shadow: var(--st-sys-elevation-level3);
+  pointer-events: auto;
+  min-width: 18rem;
+}
+
+[data-scope="toast"][data-part="root"][data-state="open"] {
+  animation: st-toast-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="toast"][data-part="root"][data-state="closed"] {
+  animation: st-toast-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+/* Type variants */
+[data-scope="toast"][data-part="root"][data-type="success"] {
+  background-color: var(--st-sys-color-tertiary-container);
+  color: var(--st-sys-color-on-tertiary-container);
+}
+
+[data-scope="toast"][data-part="root"][data-type="error"] {
+  background-color: var(--st-sys-color-error-container);
+  color: var(--st-sys-color-on-error-container);
+}
+
+[data-scope="toast"][data-part="root"][data-type="info"] {
+  background-color: var(--st-sys-color-primary-container);
+  color: var(--st-sys-color-on-primary-container);
+}
+
+/* --- Title --- */
+[data-scope="toast"][data-part="title"] {
+  font-family: var(--st-sys-typescale-title-small-font);
+  font-size: var(--st-sys-typescale-title-small-size);
+  font-weight: var(--st-sys-typescale-title-small-weight);
+}
+
+/* --- Description --- */
+[data-scope="toast"][data-part="description"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  margin-top: var(--st-sys-spacing-1);
+  opacity: 0.87;
+}
+
+/* --- Action Trigger --- */
+[data-scope="toast"][data-part="action-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--st-sys-spacing-1) var(--st-sys-spacing-3);
+  border-radius: var(--st-sys-shape-corner-full);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  opacity: 0.87;
+  transition: opacity var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="toast"][data-part="action-trigger"]:hover {
+  opacity: 1;
+}
+
+/* --- Close Trigger --- */
+[data-scope="toast"][data-part="close-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: opacity var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="toast"][data-part="close-trigger"]:hover {
+  opacity: 1;
+}
+
+@keyframes st-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes st-toast-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}

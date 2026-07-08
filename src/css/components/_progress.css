@@ -1,0 +1,59 @@
+/* ==========================================================
+ * Sawtooth CSS — Progress (Linear) Component (Zag.js)
+ * [data-scope="progress"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="progress"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2);
+  width: 100%;
+}
+
+[data-scope="progress"][data-part="label"] {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="progress"][data-part="track"] {
+  position: relative;
+  width: 100%;
+  height: 0.25rem; /* 4px */
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-surface-container-highest);
+  overflow: hidden;
+}
+
+[data-scope="progress"][data-part="range"] {
+  height: 100%;
+  background-color: var(--st-sys-color-primary);
+  border-radius: inherit;
+  transition: width var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-standard);
+}
+
+/* Indeterminate animation */
+[data-scope="progress"][data-part="track"][data-state="indeterminate"] [data-scope="progress"][data-part="range"],
+[data-scope="progress"][data-part="range"][data-state="indeterminate"] {
+  width: 50% !important;
+  animation: st-progress-indeterminate 1.5s
+    var(--st-sys-motion-easing-standard) infinite;
+}
+
+[data-scope="progress"][data-part="value-text"] {
+  font-family: var(--st-sys-typescale-label-small-font);
+  font-size: var(--st-sys-typescale-label-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+@keyframes st-progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}

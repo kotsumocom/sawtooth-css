@@ -1,0 +1,33 @@
+/* ==========================================================
+ * Sawtooth CSS — Progress (Circular) Component (Zag.js)
+ * [data-scope="progress"] セレクタ対応（SVG ベース）
+ * ========================================================== */
+
+[data-scope="progress"][data-part="circle-track"] {
+  stroke: var(--st-sys-color-surface-container-highest);
+}
+
+[data-scope="progress"][data-part="circle-range"] {
+  stroke: var(--st-sys-color-primary);
+  transition: stroke-dashoffset var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="progress"][data-part="circle-range"][data-state="indeterminate"] {
+  animation: st-circular-progress-spin 1.4s linear infinite;
+}
+
+@keyframes st-circular-progress-spin {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
