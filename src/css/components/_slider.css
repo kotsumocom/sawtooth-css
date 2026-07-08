@@ -1,0 +1,110 @@
+/* ==========================================================
+ * Sawtooth CSS — Slider Component (Zag.js)
+ * [data-scope="slider"] セレクタ対応
+ * Slider + Range Slider 両対応
+ * ========================================================== */
+
+/* --- Root --- */
+[data-scope="slider"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2);
+  width: 100%;
+  touch-action: none;
+}
+
+[data-scope="slider"][data-part="root"][data-disabled] {
+  opacity: 0.38;
+}
+
+/* --- Label --- */
+[data-scope="slider"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  color: var(--st-sys-color-on-surface);
+}
+
+/* --- Value Text --- */
+[data-scope="slider"][data-part="value-text"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+/* --- Control (wrapper for track + thumbs) --- */
+[data-scope="slider"][data-part="control"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 2.5rem; /* 40px touch target */
+  cursor: pointer;
+}
+
+[data-scope="slider"][data-part="control"][data-disabled] {
+  cursor: not-allowed;
+}
+
+/* --- Track --- */
+[data-scope="slider"][data-part="track"] {
+  position: relative;
+  width: 100%;
+  height: 0.25rem; /* 4px */
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-surface-container-highest);
+  overflow: hidden;
+}
+
+/* --- Range (filled portion) --- */
+[data-scope="slider"][data-part="range"] {
+  position: absolute;
+  height: 100%;
+  background-color: var(--st-sys-color-primary);
+  border-radius: inherit;
+}
+
+/* --- Thumb --- */
+[data-scope="slider"][data-part="thumb"] {
+  position: absolute;
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-primary);
+  box-shadow: var(--st-sys-elevation-level1);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  cursor: grab;
+  transition:
+    box-shadow var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+  z-index: 1;
+}
+
+[data-scope="slider"][data-part="thumb"]:hover {
+  box-shadow: var(--st-sys-elevation-level2);
+}
+
+[data-scope="slider"][data-part="thumb"]:active,
+[data-scope="slider"][data-part="thumb"][data-dragging] {
+  cursor: grabbing;
+  box-shadow: var(--st-sys-elevation-level3);
+}
+
+[data-scope="slider"][data-part="thumb"][data-focus] {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Marker Group --- */
+[data-scope="slider"][data-part="marker-group"] {
+  position: relative;
+  width: 100%;
+  margin-top: var(--st-sys-spacing-1);
+}
+
+/* --- Marker --- */
+[data-scope="slider"][data-part="marker"] {
+  position: absolute;
+  font-size: var(--st-sys-typescale-label-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+  transform: translateX(-50%);
+}

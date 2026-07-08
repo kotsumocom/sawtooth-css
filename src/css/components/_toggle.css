@@ -1,0 +1,58 @@
+/* ==========================================================
+ * Sawtooth CSS — Toggle Component (Zag.js)
+ * [data-scope="toggle"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="toggle"][data-part="root"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: var(--st-sys-spacing-2);
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: transparent;
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="toggle"][data-part="root"]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-surface-variant) 8%,
+    transparent
+  );
+}
+
+[data-scope="toggle"][data-part="root"][data-state="on"] {
+  background-color: var(--st-sys-color-secondary-container);
+  color: var(--st-sys-color-on-secondary-container);
+  border-color: transparent;
+}
+
+[data-scope="toggle"][data-part="root"][data-state="on"]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-secondary-container) 92%,
+    var(--st-sys-color-on-secondary-container)
+  );
+}
+
+[data-scope="toggle"][data-part="root"][data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+[data-scope="toggle"][data-part="root"]:focus-visible {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: 2px;
+}

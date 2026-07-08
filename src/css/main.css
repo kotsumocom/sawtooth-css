@@ -31,5 +31,17 @@
 @import "./components/_alert.css";
 @import "./components/_badge.css";
 
+/* --- 3b. Components (Phase 1: Form Controls) --- */
+@import "./components/_checkbox.css";
+@import "./components/_switch.css";
+@import "./components/_radio-group.css";
+@import "./components/_toggle.css";
+@import "./components/_toggle-group.css";
+@import "./components/_slider.css";
+@import "./components/_number-input.css";
+@import "./components/_pin-input.css";
+@import "./components/_password-input.css";
+@import "./components/_tags-input.css";
+
 /* --- 4. Utilities --- */
 @import "./utilities/_layout.css";

@@ -1,0 +1,87 @@
+/* ==========================================================
+ * Sawtooth CSS — Switch Component (Zag.js)
+ * [data-scope="switch"] セレクタ対応
+ * ========================================================== */
+
+/* --- Root --- */
+[data-scope="switch"][data-part="root"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-scope="switch"][data-part="root"][data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+/* --- Control (the track) --- */
+[data-scope="switch"][data-part="control"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 3.25rem; /* 52px */
+  height: 2rem; /* 32px */
+  padding: 0.25rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-surface-container-highest);
+  border: 2px solid var(--st-sys-color-outline);
+  transition:
+    background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="switch"][data-part="control"][data-state="checked"] {
+  background-color: var(--st-sys-color-primary);
+  border-color: var(--st-sys-color-primary);
+}
+
+[data-scope="switch"][data-part="control"]:hover {
+  border-color: var(--st-sys-color-on-surface);
+}
+
+[data-scope="switch"][data-part="control"][data-state="checked"]:hover {
+  background-color: var(--st-sys-color-primary);
+  border-color: var(--st-sys-color-primary);
+}
+
+[data-scope="switch"][data-part="control"][data-focus] {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Thumb --- */
+[data-scope="switch"][data-part="thumb"] {
+  width: 1rem; /* 16px */
+  height: 1rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-outline);
+  transition:
+    transform var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized),
+    width var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized),
+    height var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized),
+    background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="switch"][data-part="thumb"][data-state="checked"] {
+  transform: translateX(1.25rem);
+  width: 1.5rem; /* 24px — larger when checked (MD3) */
+  height: 1.5rem;
+  background-color: var(--st-sys-color-on-primary);
+}
+
+/* --- Label --- */
+[data-scope="switch"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+  color: var(--st-sys-color-on-surface);
+}

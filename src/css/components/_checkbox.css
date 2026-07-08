@@ -1,0 +1,97 @@
+/* ==========================================================
+ * Sawtooth CSS — Checkbox Component (Zag.js)
+ * [data-scope="checkbox"] セレクタ対応
+ * ========================================================== */
+
+/* --- Root --- */
+[data-scope="checkbox"][data-part="root"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-scope="checkbox"][data-part="root"][data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+/* --- Control (the checkbox box) --- */
+[data-scope="checkbox"][data-part="control"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem; /* 18px */
+  height: 1.125rem;
+  border: 2px solid var(--st-sys-color-on-surface-variant);
+  border-radius: var(--st-sys-shape-corner-xs);
+  background-color: transparent;
+  color: transparent;
+  transition:
+    background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+  flex-shrink: 0;
+}
+
+[data-scope="checkbox"][data-part="control"][data-state="checked"],
+[data-scope="checkbox"][data-part="control"][data-state="indeterminate"] {
+  background-color: var(--st-sys-color-primary);
+  border-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+[data-scope="checkbox"][data-part="control"]:hover {
+  border-color: var(--st-sys-color-on-surface);
+}
+
+[data-scope="checkbox"][data-part="control"][data-state="checked"]:hover,
+[data-scope="checkbox"][data-part="control"][data-state="indeterminate"]:hover {
+  background-color: var(--st-sys-color-primary);
+  border-color: var(--st-sys-color-primary);
+}
+
+[data-scope="checkbox"][data-part="control"][data-focus] {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: 2px;
+}
+
+[data-scope="checkbox"][data-part="control"][data-disabled] {
+  border-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-surface) 38%,
+    transparent
+  );
+}
+
+[data-scope="checkbox"][data-part="control"][data-state="checked"][data-disabled],
+[data-scope="checkbox"][data-part="control"][data-state="indeterminate"][data-disabled] {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-surface) 38%,
+    transparent
+  );
+  border-color: transparent;
+}
+
+/* --- Indicator (checkmark icon container) --- */
+[data-scope="checkbox"][data-part="indicator"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Label --- */
+[data-scope="checkbox"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+  color: var(--st-sys-color-on-surface);
+}

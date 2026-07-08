@@ -29,6 +29,17 @@ const COMPONENT_FILES: Record<string, string> = {
   "tabs": "_tabs.css",
   "alert": "_alert.css",
   "badge": "_badge.css",
+  /* Phase 1: Form Controls */
+  "checkbox": "_checkbox.css",
+  "switch": "_switch.css",
+  "radio-group": "_radio-group.css",
+  "toggle": "_toggle.css",
+  "toggle-group": "_toggle-group.css",
+  "slider": "_slider.css",
+  "number-input": "_number-input.css",
+  "pin-input": "_pin-input.css",
+  "password-input": "_password-input.css",
+  "tags-input": "_tags-input.css",
 };
 
 /**

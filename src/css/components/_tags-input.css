@@ -1,0 +1,142 @@
+/* ==========================================================
+ * Sawtooth CSS — Tags Input Component (Zag.js)
+ * [data-scope="tags-input"] セレクタ対応
+ * ========================================================== */
+
+/* --- Root --- */
+[data-scope="tags-input"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-1);
+}
+
+/* --- Label --- */
+[data-scope="tags-input"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+/* --- Control (tags container + input) --- */
+[data-scope="tags-input"][data-part="control"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  min-height: 3.5rem;
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  background-color: transparent;
+  transition:
+    border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="tags-input"][data-part="control"]:focus-within {
+  border-color: var(--st-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+/* --- Input --- */
+[data-scope="tags-input"][data-part="input"] {
+  flex: 1;
+  min-width: 5rem;
+  padding: var(--st-sys-spacing-1) 0;
+  background-color: transparent;
+  color: var(--st-sys-color-on-surface);
+  border: none;
+  outline: none;
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+}
+
+[data-scope="tags-input"][data-part="input"]::placeholder {
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+/* --- Item (tag chip) --- */
+[data-scope="tags-input"][data-part="item"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1);
+  padding: var(--st-sys-spacing-1) var(--st-sys-spacing-3);
+  border-radius: var(--st-sys-shape-corner-sm);
+  background-color: var(--st-sys-color-secondary-container);
+  color: var(--st-sys-color-on-secondary-container);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  line-height: 1;
+  animation: st-fade-in var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="tags-input"][data-part="item"][data-highlighted] {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: -1px;
+}
+
+[data-scope="tags-input"][data-part="item"][data-disabled] {
+  opacity: 0.38;
+}
+
+/* --- Item Preview (the visible tag content wrapper) --- */
+[data-scope="tags-input"][data-part="item-preview"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1);
+}
+
+/* --- Item Text --- */
+[data-scope="tags-input"][data-part="item-text"] {
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --- Item Delete Trigger (x button) --- */
+[data-scope="tags-input"][data-part="item-delete-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-secondary-container);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="tags-input"][data-part="item-delete-trigger"]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-secondary-container) 12%,
+    transparent
+  );
+}
+
+/* --- Clear Trigger --- */
+[data-scope="tags-input"][data-part="clear-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--st-sys-spacing-1);
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  border-radius: var(--st-sys-shape-corner-full);
+  transition:
+    background-color var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="tags-input"][data-part="clear-trigger"]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-on-surface-variant) 8%,
+    transparent
+  );
+}
