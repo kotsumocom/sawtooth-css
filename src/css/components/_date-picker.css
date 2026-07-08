@@ -1,0 +1,178 @@
+/* ==========================================================
+ * Sawtooth CSS — Date Picker Component (Zag.js)
+ * [data-scope="date-picker"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="date-picker"][data-part="control"] {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  overflow: hidden;
+  transition: border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="date-picker"][data-part="control"]:focus-within {
+  border-color: var(--st-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+[data-scope="date-picker"][data-part="input"] {
+  flex: 1;
+  padding: var(--st-sys-spacing-3) var(--st-sys-spacing-4);
+  background: transparent;
+  color: var(--st-sys-color-on-surface);
+  border: none;
+  outline: none;
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+}
+
+[data-scope="date-picker"][data-part="trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--st-sys-color-outline);
+  padding: var(--st-sys-spacing-2);
+}
+
+[data-scope="date-picker"][data-part="trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="date-picker"][data-part="positioner"] {
+  z-index: 50;
+}
+
+[data-scope="date-picker"][data-part="content"] {
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-lg);
+  box-shadow: var(--st-sys-elevation-level3);
+  padding: var(--st-sys-spacing-4);
+  min-width: 20rem;
+  outline: none;
+}
+
+[data-scope="date-picker"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+/* View control (month/year navigation) */
+[data-scope="date-picker"][data-part="view-control"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--st-sys-spacing-3);
+}
+
+[data-scope="date-picker"][data-part="prev-trigger"],
+[data-scope="date-picker"][data-part="next-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="date-picker"][data-part="prev-trigger"]:hover,
+[data-scope="date-picker"][data-part="next-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="date-picker"][data-part="range-text"] {
+  font-family: var(--st-sys-typescale-title-small-font);
+  font-size: var(--st-sys-typescale-title-small-size);
+  font-weight: var(--st-sys-typescale-title-small-weight);
+  color: var(--st-sys-color-on-surface);
+  cursor: pointer;
+}
+
+/* Calendar table */
+[data-scope="date-picker"][data-part="table"] {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+[data-scope="date-picker"][data-part="table-header"] {
+  font-family: var(--st-sys-typescale-label-small-font);
+  font-size: var(--st-sys-typescale-label-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+  text-align: center;
+  padding-bottom: var(--st-sys-spacing-1);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short2)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-today] {
+  border: 1px solid var(--st-sys-color-primary);
+  color: var(--st-sys-color-primary);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-selected] {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-outside-range] {
+  color: var(--st-sys-color-on-surface-variant);
+  opacity: 0.38;
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* In-range (for range date picker) */
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-in-range] {
+  background-color: var(--st-sys-color-primary-container);
+  color: var(--st-sys-color-on-primary-container);
+  border-radius: 0;
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-range-start] {
+  border-radius: var(--st-sys-shape-corner-full) 0 0
+    var(--st-sys-shape-corner-full);
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-range-end] {
+  border-radius: 0 var(--st-sys-shape-corner-full)
+    var(--st-sys-shape-corner-full) 0;
+}

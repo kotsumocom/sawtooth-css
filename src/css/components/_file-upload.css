@@ -1,0 +1,125 @@
+/* ==========================================================
+ * Sawtooth CSS — File Upload Component (Zag.js)
+ * [data-scope="file-upload"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="file-upload"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-3);
+}
+
+[data-scope="file-upload"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="file-upload"][data-part="dropzone"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--st-sys-spacing-3);
+  min-height: 10rem;
+  padding: var(--st-sys-spacing-6);
+  border: 2px dashed var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-md);
+  background-color: transparent;
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="file-upload"][data-part="dropzone"]:hover {
+  border-color: var(--st-sys-color-primary);
+  background-color: color-mix(in srgb, var(--st-sys-color-primary) 4%,
+    transparent);
+}
+
+[data-scope="file-upload"][data-part="dropzone"][data-dragging] {
+  border-color: var(--st-sys-color-primary);
+  background-color: color-mix(in srgb, var(--st-sys-color-primary) 8%,
+    transparent);
+  border-style: solid;
+}
+
+[data-scope="file-upload"][data-part="trigger"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-4);
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+  border: none;
+  cursor: pointer;
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="file-upload"][data-part="trigger"]:hover {
+  box-shadow: var(--st-sys-elevation-level1);
+}
+
+/* File list */
+[data-scope="file-upload"][data-part="item-group"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2);
+}
+
+[data-scope="file-upload"][data-part="item"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-3);
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  border: 1px solid var(--st-sys-color-outline-variant);
+  border-radius: var(--st-sys-shape-corner-sm);
+  background-color: var(--st-sys-color-surface-container);
+}
+
+[data-scope="file-upload"][data-part="item-name"] {
+  flex: 1;
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  color: var(--st-sys-color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-scope="file-upload"][data-part="item-size-text"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+  flex-shrink: 0;
+}
+
+[data-scope="file-upload"][data-part="item-delete-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  transition: background-color var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="file-upload"][data-part="item-delete-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-error) 12%,
+    transparent);
+  color: var(--st-sys-color-error);
+}

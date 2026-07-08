@@ -1,0 +1,153 @@
+/* ==========================================================
+ * Sawtooth CSS — Color Picker Component (Zag.js)
+ * [data-scope="color-picker"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="color-picker"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-3);
+}
+
+[data-scope="color-picker"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="color-picker"][data-part="control"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+}
+
+[data-scope="color-picker"][data-part="trigger"] {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  border: 2px solid var(--st-sys-color-outline);
+  cursor: pointer;
+  transition: box-shadow var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="color-picker"][data-part="trigger"]:hover {
+  box-shadow: var(--st-sys-elevation-level2);
+}
+
+[data-scope="color-picker"][data-part="positioner"] {
+  z-index: 50;
+}
+
+[data-scope="color-picker"][data-part="content"] {
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-lg);
+  box-shadow: var(--st-sys-elevation-level3);
+  padding: var(--st-sys-spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-3);
+  outline: none;
+}
+
+[data-scope="color-picker"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+/* Color area (2D gradient surface) */
+[data-scope="color-picker"][data-part="area"] {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  border-radius: var(--st-sys-shape-corner-sm);
+  overflow: hidden;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+[data-scope="color-picker"][data-part="area-background"] {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+[data-scope="color-picker"][data-part="area-thumb"] {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), var(--st-sys-elevation-level1);
+  transform: translate(-50%, -50%);
+}
+
+/* Channel sliders (hue, alpha, etc.) */
+[data-scope="color-picker"][data-part="channel-slider"] {
+  position: relative;
+  height: 0.75rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  cursor: pointer;
+  touch-action: none;
+}
+
+[data-scope="color-picker"][data-part="channel-slider-track"] {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+[data-scope="color-picker"][data-part="channel-slider-thumb"] {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), var(--st-sys-elevation-level1);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Swatches */
+[data-scope="color-picker"][data-part="swatch-group"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--st-sys-spacing-1);
+}
+
+[data-scope="color-picker"][data-part="swatch-trigger"] {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+[data-scope="color-picker"][data-part="swatch"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--st-sys-shape-corner-xs);
+  border: 1px solid var(--st-sys-color-outline-variant);
+}
+
+[data-scope="color-picker"][data-part="channel-input"] {
+  width: 100%;
+  padding: var(--st-sys-spacing-2);
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  background: transparent;
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  text-align: center;
+  outline: none;
+}
+
+[data-scope="color-picker"][data-part="channel-input"]:focus {
+  border-color: var(--st-sys-color-primary);
+}
+
+[data-scope="color-picker"][data-part="value-text"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}

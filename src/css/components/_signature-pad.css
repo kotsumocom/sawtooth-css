@@ -1,0 +1,67 @@
+/* ==========================================================
+ * Sawtooth CSS — Signature Pad Component (Zag.js)
+ * [data-scope="signature-pad"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="signature-pad"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2);
+}
+
+[data-scope="signature-pad"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="signature-pad"][data-part="control"] {
+  position: relative;
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-md);
+  background-color: var(--st-sys-color-surface);
+  min-height: 10rem;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+[data-scope="signature-pad"][data-part="guide"] {
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  right: 1rem;
+  border-bottom: 1px dashed var(--st-sys-color-outline-variant);
+}
+
+[data-scope="signature-pad"][data-part="segment"] {
+  fill: none;
+}
+
+[data-scope="signature-pad"][data-part="segment-path"] {
+  stroke: var(--st-sys-color-on-surface);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-scope="signature-pad"][data-part="clear-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  padding: var(--st-sys-spacing-1) var(--st-sys-spacing-3);
+  border-radius: var(--st-sys-shape-corner-full);
+  background: transparent;
+  border: 1px solid var(--st-sys-color-outline);
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="signature-pad"][data-part="clear-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}

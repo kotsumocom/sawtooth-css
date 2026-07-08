@@ -1,0 +1,56 @@
+/* ==========================================================
+ * Sawtooth CSS — Date Input Component (Zag.js) [Beta]
+ * [data-scope="date-input"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="date-input"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-1);
+}
+
+[data-scope="date-input"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="date-input"][data-part="control"] {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  padding: var(--st-sys-spacing-3) var(--st-sys-spacing-4);
+  transition: border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="date-input"][data-part="control"]:focus-within {
+  border-color: var(--st-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+[data-scope="date-input"][data-part="segment"] {
+  padding: 0 1px;
+  outline: none;
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--st-sys-color-on-surface);
+  caret-color: transparent;
+}
+
+[data-scope="date-input"][data-part="segment"][data-focus] {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+[data-scope="date-input"][data-part="segment"][data-placeholder-shown] {
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="date-input"][data-part="separator"] {
+  color: var(--st-sys-color-on-surface-variant);
+  padding: 0 2px;
+}

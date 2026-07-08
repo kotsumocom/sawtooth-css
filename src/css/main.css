@@ -66,5 +66,17 @@
 @import "./components/_splitter.css";
 @import "./components/_scroll-area.css";
 
+/* --- 3e. Components (Phase 4: Advanced Input + Pickers) --- */
+@import "./components/_combobox.css";
+@import "./components/_listbox.css";
+@import "./components/_cascade-select.css";
+@import "./components/_date-picker.css";
+@import "./components/_date-input.css";
+@import "./components/_color-picker.css";
+@import "./components/_file-upload.css";
+@import "./components/_editable.css";
+@import "./components/_rating-group.css";
+@import "./components/_signature-pad.css";
+
 /* --- 4. Utilities --- */
 @import "./utilities/_layout.css";

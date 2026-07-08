@@ -1,0 +1,103 @@
+/* ==========================================================
+ * Sawtooth CSS — Cascade Select Component (Zag.js) [Beta]
+ * [data-scope="cascade-select"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="cascade-select"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-1);
+}
+
+[data-scope="cascade-select"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="cascade-select"][data-part="control"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+}
+
+[data-scope="cascade-select"][data-part="trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--st-sys-spacing-2);
+  min-width: 10rem;
+  padding: var(--st-sys-spacing-3) var(--st-sys-spacing-4);
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  background: transparent;
+  color: var(--st-sys-color-on-surface);
+  cursor: pointer;
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  transition: border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="cascade-select"][data-part="trigger"]:hover {
+  border-color: var(--st-sys-color-on-surface);
+}
+
+[data-scope="cascade-select"][data-part="trigger"][data-state="open"] {
+  border-color: var(--st-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+[data-scope="cascade-select"][data-part="positioner"] {
+  z-index: 50;
+}
+
+[data-scope="cascade-select"][data-part="content"] {
+  display: flex;
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-xs);
+  box-shadow: var(--st-sys-elevation-level2);
+  overflow: hidden;
+  outline: none;
+}
+
+[data-scope="cascade-select"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="cascade-select"][data-part="list"] {
+  min-width: 10rem;
+  max-height: 15rem;
+  overflow-y: auto;
+  padding: var(--st-sys-spacing-1) 0;
+  border-right: 1px solid var(--st-sys-color-outline-variant);
+}
+
+[data-scope="cascade-select"][data-part="list"]:last-child {
+  border-right: none;
+}
+
+[data-scope="cascade-select"][data-part="item"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--st-sys-spacing-2);
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-4);
+  cursor: pointer;
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--st-sys-color-on-surface);
+  transition: background-color var(--st-sys-motion-duration-short2)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="cascade-select"][data-part="item"][data-highlighted] {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="cascade-select"][data-part="item"][data-state="checked"] {
+  background-color: var(--st-sys-color-secondary-container);
+  color: var(--st-sys-color-on-secondary-container);
+}

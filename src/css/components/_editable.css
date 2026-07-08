@@ -1,0 +1,100 @@
+/* ==========================================================
+ * Sawtooth CSS — Editable Component (Zag.js)
+ * [data-scope="editable"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="editable"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-1);
+}
+
+[data-scope="editable"][data-part="label"] {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="editable"][data-part="area"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+}
+
+[data-scope="editable"][data-part="preview"] {
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--st-sys-color-on-surface);
+  border-radius: var(--st-sys-shape-corner-xs);
+  cursor: pointer;
+  min-width: 0;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="editable"][data-part="preview"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="editable"][data-part="input"] {
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--st-sys-color-on-surface);
+  background: transparent;
+  border: 1px solid var(--st-sys-color-primary);
+  border-radius: var(--st-sys-shape-corner-xs);
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+[data-scope="editable"][data-part="edit-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="editable"][data-part="edit-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="editable"][data-part="submit-trigger"],
+[data-scope="editable"][data-part="cancel-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="editable"][data-part="submit-trigger"] {
+  color: var(--st-sys-color-primary);
+}
+
+[data-scope="editable"][data-part="cancel-trigger"] {
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+[data-scope="editable"][data-part="submit-trigger"]:hover,
+[data-scope="editable"][data-part="cancel-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}

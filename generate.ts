@@ -60,6 +60,17 @@ const COMPONENT_FILES: Record<string, string> = {
   "segmented-control": "_segmented-control.css",
   "splitter": "_splitter.css",
   "scroll-area": "_scroll-area.css",
+  /* Phase 4: Advanced Input + Pickers */
+  "combobox": "_combobox.css",
+  "listbox": "_listbox.css",
+  "cascade-select": "_cascade-select.css",
+  "date-picker": "_date-picker.css",
+  "date-input": "_date-input.css",
+  "color-picker": "_color-picker.css",
+  "file-upload": "_file-upload.css",
+  "editable": "_editable.css",
+  "rating-group": "_rating-group.css",
+  "signature-pad": "_signature-pad.css",
 };
 
 /**
