@@ -6,6 +6,20 @@
     "./setup": "./setup.ts",
     "./generate": "./generate.ts"
   },
+  "publish": {
+    "include": [
+      "mod.ts",
+      "setup.ts",
+      "generate.ts",
+      "src/",
+      "LICENSE",
+      "README.md"
+    ],
+    "exclude": [
+      "dist/",
+      "demo/"
+    ]
+  },
   "tasks": {
     "build": "deno run -A src/build.ts",
     "dev": "deno run -A --watch=src/ src/build.ts --watch",
