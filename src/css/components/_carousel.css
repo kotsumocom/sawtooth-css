@@ -1,0 +1,86 @@
+/* ==========================================================
+ * Sawtooth CSS — Carousel Component (Zag.js)
+ * [data-scope="carousel"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="carousel"][data-part="root"] {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+[data-scope="carousel"][data-part="viewport"] {
+  overflow: hidden;
+}
+
+[data-scope="carousel"][data-part="item-group"] {
+  display: flex;
+  transition: transform var(--st-sys-motion-duration-long1)
+    var(--st-sys-motion-easing-emphasized);
+}
+
+[data-scope="carousel"][data-part="item"] {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+[data-scope="carousel"][data-part="control"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--st-sys-spacing-2);
+  margin-top: var(--st-sys-spacing-3);
+}
+
+[data-scope="carousel"][data-part="prev-trigger"],
+[data-scope="carousel"][data-part="next-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-surface-container);
+  color: var(--st-sys-color-on-surface);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--st-sys-elevation-level1);
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="carousel"][data-part="prev-trigger"]:hover,
+[data-scope="carousel"][data-part="next-trigger"]:hover {
+  background-color: var(--st-sys-color-surface-container-high);
+}
+
+[data-scope="carousel"][data-part="prev-trigger"][data-disabled],
+[data-scope="carousel"][data-part="next-trigger"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+[data-scope="carousel"][data-part="indicator-group"] {
+  display: flex;
+  justify-content: center;
+  gap: var(--st-sys-spacing-2);
+  margin-top: var(--st-sys-spacing-3);
+}
+
+[data-scope="carousel"][data-part="indicator"] {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-outline-variant);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    width var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized);
+}
+
+[data-scope="carousel"][data-part="indicator"][data-current] {
+  background-color: var(--st-sys-color-primary);
+  width: 1.5rem;
+}

@@ -1,0 +1,29 @@
+/* ==========================================================
+ * Sawtooth CSS — Marquee Component (Zag.js)
+ * [data-scope="marquee"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="marquee"][data-part="root"] {
+  overflow: hidden;
+  width: 100%;
+}
+
+[data-scope="marquee"][data-part="content"] {
+  display: flex;
+  gap: var(--st-sys-spacing-6);
+  animation: st-marquee-scroll var(--marquee-duration, 20s) linear infinite;
+  width: max-content;
+}
+
+[data-scope="marquee"][data-part="root"]:hover [data-scope="marquee"][data-part="content"] {
+  animation-play-state: paused;
+}
+
+@keyframes st-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

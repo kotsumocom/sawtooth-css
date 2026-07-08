@@ -1,0 +1,99 @@
+/* ==========================================================
+ * Sawtooth CSS — Tour Component (Zag.js)
+ * [data-scope="tour"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="tour"][data-part="backdrop"] {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+[data-scope="tour"][data-part="positioner"] {
+  z-index: 101;
+}
+
+[data-scope="tour"][data-part="content"] {
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-lg);
+  box-shadow: var(--st-sys-elevation-level3);
+  padding: var(--st-sys-spacing-5);
+  max-width: 22.5rem;
+  outline: none;
+}
+
+[data-scope="tour"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="tour"][data-part="title"] {
+  font-family: var(--st-sys-typescale-title-medium-font);
+  font-size: var(--st-sys-typescale-title-medium-size);
+  font-weight: var(--st-sys-typescale-title-medium-weight);
+  color: var(--st-sys-color-on-surface);
+  margin-bottom: var(--st-sys-spacing-2);
+}
+
+[data-scope="tour"][data-part="description"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  color: var(--st-sys-color-on-surface-variant);
+  margin-bottom: var(--st-sys-spacing-4);
+}
+
+[data-scope="tour"][data-part="progress-text"] {
+  font-family: var(--st-sys-typescale-label-small-font);
+  font-size: var(--st-sys-typescale-label-small-size);
+  color: var(--st-sys-color-on-surface-variant);
+  margin-bottom: var(--st-sys-spacing-3);
+}
+
+[data-scope="tour"][data-part="action-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-4);
+  border-radius: var(--st-sys-shape-corner-full);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  cursor: pointer;
+  border: none;
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+  transition: box-shadow var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="tour"][data-part="action-trigger"]:hover {
+  box-shadow: var(--st-sys-elevation-level1);
+}
+
+[data-scope="tour"][data-part="close-trigger"] {
+  position: absolute;
+  top: var(--st-sys-spacing-2);
+  right: var(--st-sys-spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-surface-variant);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="tour"][data-part="close-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="tour"][data-part="arrow"] {
+  --arrow-size: 8px;
+  --arrow-background: var(--st-sys-color-surface-container);
+}

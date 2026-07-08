@@ -1,0 +1,44 @@
+/* ==========================================================
+ * Sawtooth CSS — Image Cropper Component (Zag.js)
+ * [data-scope="image-cropper"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="image-cropper"][data-part="root"] {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  touch-action: none;
+}
+
+[data-scope="image-cropper"][data-part="image"] {
+  max-width: 100%;
+  display: block;
+}
+
+[data-scope="image-cropper"][data-part="area"] {
+  position: absolute;
+  border: 2px solid white;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+  cursor: move;
+}
+
+[data-scope="image-cropper"][data-part="overlay"] {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+[data-scope="image-cropper"][data-part="grid"] {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  pointer-events: none;
+}
+
+[data-scope="image-cropper"][data-part="grid"]::before,
+[data-scope="image-cropper"][data-part="grid"]::after {
+  content: "";
+  position: absolute;
+}

@@ -71,6 +71,16 @@ const COMPONENT_FILES: Record<string, string> = {
   "editable": "_editable.css",
   "rating-group": "_rating-group.css",
   "signature-pad": "_signature-pad.css",
+  /* Phase 5: Special + Visual */
+  "avatar": "_avatar.css",
+  "carousel": "_carousel.css",
+  "floating-panel": "_floating-panel.css",
+  "image-cropper": "_image-cropper.css",
+  "marquee": "_marquee.css",
+  "timer": "_timer.css",
+  "tour": "_tour.css",
+  "tree-view": "_tree-view.css",
+  "angle-slider": "_angle-slider.css",
 };
 
 /**

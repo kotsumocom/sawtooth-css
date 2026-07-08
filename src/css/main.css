@@ -78,5 +78,16 @@
 @import "./components/_rating-group.css";
 @import "./components/_signature-pad.css";
 
+/* --- 3f. Components (Phase 5: Special + Visual) --- */
+@import "./components/_avatar.css";
+@import "./components/_carousel.css";
+@import "./components/_floating-panel.css";
+@import "./components/_image-cropper.css";
+@import "./components/_marquee.css";
+@import "./components/_timer.css";
+@import "./components/_tour.css";
+@import "./components/_tree-view.css";
+@import "./components/_angle-slider.css";
+
 /* --- 4. Utilities --- */
 @import "./utilities/_layout.css";
