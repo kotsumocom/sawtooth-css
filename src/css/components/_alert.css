@@ -1,0 +1,78 @@
+/* ==========================================================
+ * Sawtooth CSS — Alert Component
+ * info / success / warning / error
+ * ========================================================== */
+
+.st-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--st-sys-spacing-3);
+  padding: var(--st-sys-spacing-4);
+  border-radius: var(--st-sys-shape-corner-md);
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+}
+
+/* --- Info --- */
+.st-alert--info {
+  background-color: var(--st-sys-color-primary-container);
+  color: var(--st-sys-color-on-primary-container);
+}
+
+/* --- Success --- */
+.st-alert--success {
+  background-color: var(--st-sys-color-tertiary-container);
+  color: var(--st-sys-color-on-tertiary-container);
+}
+
+/* --- Warning --- */
+.st-alert--warning {
+  background-color: var(--st-sys-color-surface-container-highest);
+  color: var(--st-sys-color-on-surface);
+  border: 1px solid var(--st-sys-color-outline);
+}
+
+/* --- Error --- */
+.st-alert--error {
+  background-color: var(--st-sys-color-error-container);
+  color: var(--st-sys-color-on-error-container);
+}
+
+/* --- Alert Parts --- */
+.st-alert__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.st-alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.st-alert__title {
+  font-family: var(--st-sys-typescale-title-small-font);
+  font-size: var(--st-sys-typescale-title-small-size);
+  font-weight: var(--st-sys-typescale-title-small-weight);
+  line-height: var(--st-sys-typescale-title-small-line-height);
+  margin-bottom: var(--st-sys-spacing-1);
+}
+
+.st-alert__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+.st-alert__close:hover {
+  opacity: 1;
+}

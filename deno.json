@@ -1,0 +1,25 @@
+{
+  "name": "@kotsumo/sawtooth-css",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./mod.ts",
+    "./setup": "./setup.ts",
+    "./generate": "./generate.ts"
+  },
+  "tasks": {
+    "build": "deno run -A src/build.ts",
+    "dev": "deno run -A --watch=src/ src/build.ts --watch",
+    "preview": "deno run -A demo/server.ts",
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  },
+  "imports": {
+    "@material/material-color-utilities": "npm:@material/material-color-utilities@^0.3.0"
+  },
+  "lint": {
+    "exclude": ["dist/", "demo/"]
+  },
+  "fmt": {
+    "exclude": ["dist/"]
+  }
+}

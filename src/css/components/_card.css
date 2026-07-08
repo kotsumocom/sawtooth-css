@@ -1,0 +1,79 @@
+/* ==========================================================
+ * Sawtooth CSS — Card Component
+ * MD3 Card: Elevated / Filled / Outlined
+ * ========================================================== */
+
+.st-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--st-sys-shape-corner-md);
+  overflow: hidden;
+  transition:
+    box-shadow var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+/* --- Elevated Card (Default) --- */
+.st-card--elevated {
+  background-color: var(--st-sys-color-surface-container-low);
+  box-shadow: var(--st-sys-elevation-level1);
+}
+
+.st-card--elevated:hover {
+  box-shadow: var(--st-sys-elevation-level2);
+}
+
+/* --- Filled Card --- */
+.st-card--filled {
+  background-color: var(--st-sys-color-surface-container-highest);
+  box-shadow: var(--st-sys-elevation-level0);
+}
+
+/* --- Outlined Card --- */
+.st-card--outlined {
+  background-color: var(--st-sys-color-surface);
+  border: 1px solid var(--st-sys-color-outline-variant);
+  box-shadow: var(--st-sys-elevation-level0);
+}
+
+/* --- Card Parts --- */
+.st-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-4);
+  padding: var(--st-sys-spacing-4);
+}
+
+.st-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.st-card__content {
+  padding: var(--st-sys-spacing-4);
+  flex: 1;
+}
+
+.st-card__title {
+  font-family: var(--st-sys-typescale-title-large-font);
+  font-size: var(--st-sys-typescale-title-large-size);
+  font-weight: var(--st-sys-typescale-title-large-weight);
+  line-height: var(--st-sys-typescale-title-large-line-height);
+  color: var(--st-sys-color-on-surface);
+}
+
+.st-card__subtitle {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+  color: var(--st-sys-color-on-surface-variant);
+  margin-top: var(--st-sys-spacing-1);
+}
+
+.st-card__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  padding: var(--st-sys-spacing-4);
+}

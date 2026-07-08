@@ -1,0 +1,67 @@
+/* ==========================================================
+ * Sawtooth CSS — Badge Component
+ * small / medium / large + color variants
+ * ========================================================== */
+
+.st-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--st-sys-spacing-1);
+  padding: 0 var(--st-sys-spacing-2);
+  min-height: 1.5rem; /* 24px */
+  border-radius: var(--st-sys-shape-corner-full);
+  font-family: var(--st-sys-typescale-label-medium-font);
+  font-size: var(--st-sys-typescale-label-medium-size);
+  font-weight: var(--st-sys-typescale-label-medium-weight);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* --- Color Variants --- */
+.st-badge--primary {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+.st-badge--secondary {
+  background-color: var(--st-sys-color-secondary);
+  color: var(--st-sys-color-on-secondary);
+}
+
+.st-badge--tertiary {
+  background-color: var(--st-sys-color-tertiary);
+  color: var(--st-sys-color-on-tertiary);
+}
+
+.st-badge--error {
+  background-color: var(--st-sys-color-error);
+  color: var(--st-sys-color-on-error);
+}
+
+.st-badge--outline {
+  background-color: transparent;
+  color: var(--st-sys-color-on-surface-variant);
+  border: 1px solid var(--st-sys-color-outline);
+}
+
+/* --- Size Variants --- */
+.st-badge--sm {
+  min-height: 1rem; /* 16px */
+  padding: 0 var(--st-sys-spacing-1);
+  font-size: var(--st-sys-typescale-label-small-size);
+}
+
+.st-badge--lg {
+  min-height: 2rem; /* 32px */
+  padding: 0 var(--st-sys-spacing-3);
+  font-size: var(--st-sys-typescale-label-large-size);
+}
+
+/* --- Dot Badge (no text) --- */
+.st-badge--dot {
+  min-height: 0.5rem; /* 8px */
+  min-width: 0.5rem;
+  padding: 0;
+  border-radius: var(--st-sys-shape-corner-full);
+}

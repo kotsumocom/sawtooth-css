@@ -1,0 +1,153 @@
+/* ==========================================================
+ * Sawtooth CSS — Layout Utilities
+ * Container, Flex, Grid helpers
+ * ========================================================== */
+
+/* --- Container --- */
+.st-container {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin-inline: auto;
+  padding-inline: var(--st-sys-spacing-4);
+}
+
+.st-container--sm {
+  max-width: 40rem; /* 640px */
+}
+
+.st-container--md {
+  max-width: 56rem; /* 896px */
+}
+
+.st-container--lg {
+  max-width: 75rem; /* 1200px */
+}
+
+.st-container--xl {
+  max-width: 90rem; /* 1440px */
+}
+
+/* --- Flex --- */
+.st-flex {
+  display: flex;
+}
+
+.st-flex--inline {
+  display: inline-flex;
+}
+
+.st-flex--col {
+  flex-direction: column;
+}
+
+.st-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.st-flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.st-flex--between {
+  justify-content: space-between;
+}
+
+.st-flex--end {
+  justify-content: flex-end;
+}
+
+.st-flex--items-start {
+  align-items: flex-start;
+}
+
+.st-flex--items-center {
+  align-items: center;
+}
+
+.st-flex--items-end {
+  align-items: flex-end;
+}
+
+/* --- Grid --- */
+.st-grid {
+  display: grid;
+}
+
+.st-grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.st-grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.st-grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive grid */
+@media (max-width: 48rem) {
+  .st-grid--cols-2,
+  .st-grid--cols-3,
+  .st-grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .st-grid--cols-3,
+  .st-grid--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Gap --- */
+.st-gap-0 {
+  gap: var(--st-sys-spacing-0);
+}
+.st-gap-1 {
+  gap: var(--st-sys-spacing-1);
+}
+.st-gap-2 {
+  gap: var(--st-sys-spacing-2);
+}
+.st-gap-3 {
+  gap: var(--st-sys-spacing-3);
+}
+.st-gap-4 {
+  gap: var(--st-sys-spacing-4);
+}
+.st-gap-5 {
+  gap: var(--st-sys-spacing-5);
+}
+.st-gap-6 {
+  gap: var(--st-sys-spacing-6);
+}
+.st-gap-8 {
+  gap: var(--st-sys-spacing-8);
+}
+.st-gap-10 {
+  gap: var(--st-sys-spacing-10);
+}
+.st-gap-12 {
+  gap: var(--st-sys-spacing-12);
+}
+
+/* --- Stack (vertical spacing) --- */
+.st-stack > * + * {
+  margin-top: var(--st-stack-gap, var(--st-sys-spacing-4));
+}
+
+.st-stack--sm {
+  --st-stack-gap: var(--st-sys-spacing-2);
+}
+.st-stack--md {
+  --st-stack-gap: var(--st-sys-spacing-4);
+}
+.st-stack--lg {
+  --st-stack-gap: var(--st-sys-spacing-6);
+}
+.st-stack--xl {
+  --st-stack-gap: var(--st-sys-spacing-8);
+}

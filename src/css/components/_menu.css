@@ -1,0 +1,72 @@
+/* ==========================================================
+ * Sawtooth CSS — Menu Component (Zag.js)
+ * [data-scope="menu"] セレクタ対応
+ * ========================================================== */
+
+/* --- Positioner --- */
+[data-scope="menu"][data-part="positioner"] {
+  z-index: 50;
+}
+
+/* --- Content (dropdown) --- */
+[data-scope="menu"][data-part="content"] {
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-xs);
+  box-shadow: var(--st-sys-elevation-level2);
+  padding: var(--st-sys-spacing-1) 0;
+  min-width: 7rem; /* 112px */
+  outline: none;
+  overflow: auto;
+  max-height: 20rem;
+}
+
+[data-scope="menu"][data-part="content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="menu"][data-part="content"][data-state="closed"] {
+  animation: st-fade-out var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+/* --- Item --- */
+[data-scope="menu"][data-part="item"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-3);
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  line-height: var(--st-sys-typescale-body-large-line-height);
+  color: var(--st-sys-color-on-surface);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short2)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="menu"][data-part="item"][data-highlighted] {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="menu"][data-part="item"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* --- Separator --- */
+[data-scope="menu"][data-part="separator"] {
+  height: 1px;
+  background-color: var(--st-sys-color-outline-variant);
+  margin: var(--st-sys-spacing-1) 0;
+}
+
+/* --- Item Group Label --- */
+[data-scope="menu"][data-part="item-group-label"] {
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  font-family: var(--st-sys-typescale-label-medium-font);
+  font-size: var(--st-sys-typescale-label-medium-size);
+  font-weight: var(--st-sys-typescale-label-medium-weight);
+  color: var(--st-sys-color-on-surface-variant);
+}

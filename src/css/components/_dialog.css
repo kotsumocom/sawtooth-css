@@ -1,0 +1,138 @@
+/* ==========================================================
+ * Sawtooth CSS — Dialog Component (Zag.js)
+ * [data-scope="dialog"] セレクタ対応
+ * ========================================================== */
+
+/* --- Backdrop --- */
+[data-scope="dialog"][data-part="backdrop"] {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+[data-scope="dialog"][data-part="backdrop"][data-state="open"] {
+  animation: st-backdrop-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="dialog"][data-part="backdrop"][data-state="closed"] {
+  animation: st-backdrop-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+/* --- Positioner --- */
+[data-scope="dialog"][data-part="positioner"] {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--st-sys-spacing-6);
+}
+
+/* --- Content --- */
+[data-scope="dialog"][data-part="content"] {
+  position: relative;
+  background-color: var(--st-sys-color-surface-container-high);
+  border-radius: var(--st-sys-shape-corner-xl);
+  box-shadow: var(--st-sys-elevation-level3);
+  padding: var(--st-sys-spacing-6);
+  min-width: 17.5rem; /* 280px */
+  max-width: 35rem; /* 560px */
+  max-height: calc(100vh - var(--st-sys-spacing-12));
+  overflow-y: auto;
+  outline: none;
+}
+
+[data-scope="dialog"][data-part="content"][data-state="open"] {
+  animation: st-dialog-in var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="dialog"][data-part="content"][data-state="closed"] {
+  animation: st-dialog-out var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+/* --- Title --- */
+[data-scope="dialog"][data-part="title"] {
+  font-family: var(--st-sys-typescale-headline-small-font);
+  font-size: var(--st-sys-typescale-headline-small-size);
+  font-weight: var(--st-sys-typescale-headline-small-weight);
+  line-height: var(--st-sys-typescale-headline-small-line-height);
+  color: var(--st-sys-color-on-surface);
+  margin-bottom: var(--st-sys-spacing-4);
+}
+
+/* --- Description --- */
+[data-scope="dialog"][data-part="description"] {
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+  color: var(--st-sys-color-on-surface-variant);
+  margin-bottom: var(--st-sys-spacing-6);
+}
+
+/* --- Close Trigger --- */
+[data-scope="dialog"][data-part="close-trigger"] {
+  position: absolute;
+  top: var(--st-sys-spacing-4);
+  right: var(--st-sys-spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  color: var(--st-sys-color-on-surface-variant);
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="dialog"][data-part="close-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface-variant)
+    8%, transparent);
+}
+
+/* --- Animations --- */
+@keyframes st-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes st-backdrop-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes st-dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes st-dialog-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}

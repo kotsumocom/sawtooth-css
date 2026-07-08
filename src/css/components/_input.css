@@ -1,0 +1,84 @@
+/* ==========================================================
+ * Sawtooth CSS — Input Component
+ * MD3 Outlined TextField
+ * ========================================================== */
+
+.st-input {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem; /* 56px */
+  padding: var(--st-sys-spacing-4);
+  background-color: transparent;
+  color: var(--st-sys-color-on-surface);
+  border: 1px solid var(--st-sys-color-outline);
+  border-radius: var(--st-sys-shape-corner-xs);
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  line-height: var(--st-sys-typescale-body-large-line-height);
+  letter-spacing: var(--st-sys-typescale-body-large-tracking);
+  transition:
+    border-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    outline var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+.st-input::placeholder {
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+.st-input:hover {
+  border-color: var(--st-sys-color-on-surface);
+}
+
+.st-input:focus {
+  outline: none;
+  border-color: var(--st-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+}
+
+.st-input:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  border-color: color-mix(in srgb, var(--st-sys-color-on-surface) 12%,
+    transparent);
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 4%,
+    transparent);
+}
+
+/* Error state */
+.st-input[aria-invalid="true"],
+.st-input--error {
+  border-color: var(--st-sys-color-error);
+}
+
+.st-input[aria-invalid="true"]:focus,
+.st-input--error:focus {
+  border-color: var(--st-sys-color-error);
+  box-shadow: inset 0 0 0 1px var(--st-sys-color-error);
+}
+
+/* --- Field wrapper (for label + input + helper text) --- */
+.st-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-1);
+}
+
+.st-field__label {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  line-height: var(--st-sys-typescale-body-small-line-height);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+.st-field__helper {
+  font-family: var(--st-sys-typescale-body-small-font);
+  font-size: var(--st-sys-typescale-body-small-size);
+  line-height: var(--st-sys-typescale-body-small-line-height);
+  color: var(--st-sys-color-on-surface-variant);
+}
+
+.st-field__helper--error {
+  color: var(--st-sys-color-error);
+}

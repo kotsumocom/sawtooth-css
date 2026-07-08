@@ -1,0 +1,14 @@
+/* ==========================================================
+ * Sawtooth CSS — Shape Tokens
+ * MD3 Shape scale (7 levels)
+ * ========================================================== */
+
+:root {
+  --st-sys-shape-corner-none: 0;
+  --st-sys-shape-corner-xs: 0.25rem;
+  --st-sys-shape-corner-sm: 0.5rem;
+  --st-sys-shape-corner-md: 0.75rem;
+  --st-sys-shape-corner-lg: 1rem;
+  --st-sys-shape-corner-xl: 1.75rem;
+  --st-sys-shape-corner-full: 624.9375rem;
+}

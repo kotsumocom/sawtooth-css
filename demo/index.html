@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sawtooth CSS — コンポーネントデモ</title>
+    <link rel="stylesheet" href="/sawtooth.css">
+    <style>
+    /* デモ固有のスタイル */
+    .demo-section {
+      margin-bottom: var(--st-sys-spacing-10);
+    }
+    .demo-section h2 {
+      font-family: var(--st-sys-typescale-headline-medium-font);
+      font-size: var(--st-sys-typescale-headline-medium-size);
+      font-weight: 500;
+      line-height: var(--st-sys-typescale-headline-medium-line-height);
+      color: var(--st-sys-color-on-surface);
+      margin-bottom: var(--st-sys-spacing-4);
+      padding-bottom: var(--st-sys-spacing-2);
+      border-bottom: 1px solid var(--st-sys-color-outline-variant);
+    }
+    .demo-section h3 {
+      font-family: var(--st-sys-typescale-title-medium-font);
+      font-size: var(--st-sys-typescale-title-medium-size);
+      font-weight: var(--st-sys-typescale-title-medium-weight);
+      color: var(--st-sys-color-on-surface-variant);
+      margin-bottom: var(--st-sys-spacing-3);
+    }
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--st-sys-spacing-3);
+      margin-bottom: var(--st-sys-spacing-4);
+    }
+    .demo-header {
+      padding: var(--st-sys-spacing-8) 0;
+      text-align: center;
+    }
+    .demo-header h1 {
+      font-family: var(--st-sys-typescale-display-small-font);
+      font-size: var(--st-sys-typescale-display-small-size);
+      font-weight: 500;
+      color: var(--st-sys-color-primary);
+    }
+    .demo-header p {
+      font-family: var(--st-sys-typescale-body-large-font);
+      font-size: var(--st-sys-typescale-body-large-size);
+      color: var(--st-sys-color-on-surface-variant);
+      margin-top: var(--st-sys-spacing-2);
+    }
+    .demo-theme-toggle {
+      position: fixed;
+      top: var(--st-sys-spacing-4);
+      right: var(--st-sys-spacing-4);
+      z-index: 200;
+    }
+    .color-swatch {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--st-sys-spacing-1);
+    }
+    .color-swatch__box {
+      width: 4rem;
+      height: 4rem;
+      border-radius: var(--st-sys-shape-corner-md);
+      border: 1px solid var(--st-sys-color-outline-variant);
+    }
+    .color-swatch__label {
+      font-size: var(--st-sys-typescale-label-small-size);
+      color: var(--st-sys-color-on-surface-variant);
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <div class="demo-theme-toggle">
+      <button class="st-button st-button--tonal" onclick="toggleTheme()"
+        id="theme-btn">
+      🌙 ダーク
+    </button>
+    </div>
+
+    <div class="st-container">
+      <!-- Header -->
+      <div class="demo-header">
+        <h1>🪚 Sawtooth CSS</h1>
+        <p>MD3 準拠のデザインシステム — コンポーネントデモ</p>
+      </div>
+
+      <!-- Colors -->
+      <div class="demo-section">
+        <h2>🎨 カラートークン</h2>
+        <h3>System Colors</h3>
+        <div class="demo-row">
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-primary)"></div>
+            <span class="color-swatch__label">Primary</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-secondary)"></div>
+            <span class="color-swatch__label">Secondary</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-tertiary)"></div>
+            <span class="color-swatch__label">Tertiary</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-error)"></div>
+            <span class="color-swatch__label">Error</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-surface)"></div>
+            <span class="color-swatch__label">Surface</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-surface-container)"></div>
+            <span class="color-swatch__label">Container</span>
+          </div>
+        </div>
+
+        <h3>Containers</h3>
+        <div class="demo-row">
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-primary-container)"></div>
+            <span class="color-swatch__label">Primary Cnt</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-secondary-container)"></div>
+            <span class="color-swatch__label">Secondary Cnt</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-tertiary-container)"></div>
+            <span class="color-swatch__label">Tertiary Cnt</span>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__box"
+              style="background-color: var(--st-sys-color-error-container)"></div>
+            <span class="color-swatch__label">Error Cnt</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="demo-section">
+        <h2>🔘 Button</h2>
+
+        <h3>バリアント</h3>
+        <div class="demo-row">
+          <button class="st-button st-button--filled">Filled</button>
+          <button class="st-button st-button--outlined">Outlined</button>
+          <button class="st-button st-button--text">Text</button>
+          <button class="st-button st-button--elevated">Elevated</button>
+          <button class="st-button st-button--tonal">Tonal</button>
+        </div>
+
+        <h3>サイズ</h3>
+        <div class="demo-row">
+          <button
+            class="st-button st-button--filled st-button--sm">Small</button>
+          <button class="st-button st-button--filled">Medium</button>
+          <button
+            class="st-button st-button--filled st-button--lg">Large</button>
+        </div>
+
+        <h3>無効状態</h3>
+        <div class="demo-row">
+          <button class="st-button st-button--filled" disabled>Disabled</button>
+          <button class="st-button st-button--outlined"
+            disabled>Disabled</button>
+          <button class="st-button st-button--tonal" disabled>Disabled</button>
+        </div>
+      </div>
+
+      <!-- Input / Textarea -->
+      <div class="demo-section">
+        <h2>📝 Input / Textarea</h2>
+        <div class="st-grid st-grid--cols-2 st-gap-6">
+          <div class="st-field">
+            <label class="st-field__label" for="demo-name">名前</label>
+            <input class="st-input" id="demo-name" type="text"
+              placeholder="山田太郎">
+            <span class="st-field__helper">フルネームを入力してください</span>
+          </div>
+          <div class="st-field">
+            <label class="st-field__label"
+              for="demo-email">メールアドレス</label>
+            <input class="st-input st-input--error" id="demo-email" type="email"
+              value="invalid-email" aria-invalid="true">
+            <span
+              class="st-field__helper st-field__helper--error">有効なメールアドレスを入力してください</span>
+          </div>
+          <div class="st-field" style="grid-column: 1 / -1;">
+            <label class="st-field__label" for="demo-bio">自己紹介</label>
+            <textarea class="st-textarea" id="demo-bio"
+              placeholder="自己紹介を入力..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="demo-section">
+        <h2>🃏 Card</h2>
+        <div class="st-grid st-grid--cols-3 st-gap-6">
+          <div class="st-card st-card--elevated">
+            <div class="st-card__content">
+              <div class="st-card__title">Elevated Card</div>
+              <div class="st-card__subtitle">影付きの浮いたカード</div>
+              <p style="margin-top: var(--st-sys-spacing-3)">
+              コンテンツテキストがここに入ります。
+            </p>
+            </div>
+            <div class="st-card__actions">
+              <button class="st-button st-button--text">キャンセル</button>
+              <button class="st-button st-button--filled">確認</button>
+            </div>
+          </div>
+
+          <div class="st-card st-card--filled">
+            <div class="st-card__content">
+              <div class="st-card__title">Filled Card</div>
+              <div class="st-card__subtitle">塗りつぶしカード</div>
+              <p style="margin-top: var(--st-sys-spacing-3)">
+              コンテンツテキストがここに入ります。
+            </p>
+            </div>
+            <div class="st-card__actions">
+              <button class="st-button st-button--text">詳細</button>
+            </div>
+          </div>
+
+          <div class="st-card st-card--outlined">
+            <div class="st-card__content">
+              <div class="st-card__title">Outlined Card</div>
+              <div class="st-card__subtitle">ボーダー付きカード</div>
+              <p style="margin-top: var(--st-sys-spacing-3)">
+              コンテンツテキストがここに入ります。
+            </p>
+            </div>
+            <div class="st-card__actions">
+              <button class="st-button st-button--outlined">アクション</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert -->
+      <div class="demo-section">
+        <h2>⚠️ Alert</h2>
+        <div class="st-stack st-stack--md">
+          <div class="st-alert st-alert--info">
+            <span class="st-alert__icon">ℹ️</span>
+            <div class="st-alert__content">
+            <div class="st-alert__title">お知らせ</div>
+            メンテナンスは明日の午前2時に予定されています。
+          </div>
+          </div>
+          <div class="st-alert st-alert--success">
+            <span class="st-alert__icon">✅</span>
+            <div class="st-alert__content">
+            <div class="st-alert__title">成功</div>
+            データが正常に保存されました。
+          </div>
+          </div>
+          <div class="st-alert st-alert--warning">
+            <span class="st-alert__icon">⚠️</span>
+            <div class="st-alert__content">
+            <div class="st-alert__title">注意</div>
+            このアクションは取り消せません。
+          </div>
+          </div>
+          <div class="st-alert st-alert--error">
+            <span class="st-alert__icon">❌</span>
+            <div class="st-alert__content">
+            <div class="st-alert__title">エラー</div>
+            接続に失敗しました。再試行してください。
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge -->
+      <div class="demo-section">
+        <h2>🏷️ Badge</h2>
+        <div class="demo-row">
+          <span class="st-badge st-badge--primary">Primary</span>
+          <span class="st-badge st-badge--secondary">Secondary</span>
+          <span class="st-badge st-badge--tertiary">Tertiary</span>
+          <span class="st-badge st-badge--error">Error</span>
+          <span class="st-badge st-badge--outline">Outline</span>
+        </div>
+        <h3>サイズ</h3>
+        <div class="demo-row">
+          <span class="st-badge st-badge--primary st-badge--sm">Small</span>
+          <span class="st-badge st-badge--primary">Medium</span>
+          <span class="st-badge st-badge--primary st-badge--lg">Large</span>
+          <span class="st-badge st-badge--error st-badge--dot"></span>
+        </div>
+      </div>
+
+      <!-- Layout -->
+      <div class="demo-section">
+        <h2>📐 Layout Utilities</h2>
+        <h3>Flex</h3>
+        <div class="st-flex st-gap-3"
+          style="padding: var(--st-sys-spacing-3); background: var(--st-sys-color-surface-container); border-radius: var(--st-sys-shape-corner-md);">
+          <div
+            style="padding: var(--st-sys-spacing-3); background: var(--st-sys-color-primary-container); border-radius: var(--st-sys-shape-corner-sm);">Item 1</div>
+          <div
+            style="padding: var(--st-sys-spacing-3); background: var(--st-sys-color-secondary-container); border-radius: var(--st-sys-shape-corner-sm);">Item 2</div>
+          <div
+            style="padding: var(--st-sys-spacing-3); background: var(--st-sys-color-tertiary-container); border-radius: var(--st-sys-shape-corner-sm);">Item 3</div>
+        </div>
+
+        <h3 style="margin-top: var(--st-sys-spacing-4);">Grid (3 columns)</h3>
+        <div class="st-grid st-grid--cols-3 st-gap-3">
+          <div
+            style="padding: var(--st-sys-spacing-4); background: var(--st-sys-color-surface-container-high); border-radius: var(--st-sys-shape-corner-sm); text-align: center;">Col 1</div>
+          <div
+            style="padding: var(--st-sys-spacing-4); background: var(--st-sys-color-surface-container-high); border-radius: var(--st-sys-shape-corner-sm); text-align: center;">Col 2</div>
+          <div
+            style="padding: var(--st-sys-spacing-4); background: var(--st-sys-color-surface-container-high); border-radius: var(--st-sys-shape-corner-sm); text-align: center;">Col 3</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        style="text-align: center; padding: var(--st-sys-spacing-8) 0; color: var(--st-sys-color-on-surface-variant); border-top: 1px solid var(--st-sys-color-outline-variant);">
+        <p>Sawtooth CSS v0.1.0 — Deno Fresh + Zag.js デザインシステム</p>
+      </footer>
+    </div>
+
+    <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.getElementById("theme-btn");
+      const current = html.getAttribute("data-theme");
+      if (current === "dark") {
+        html.removeAttribute("data-theme");
+        btn.textContent = "🌙 ダーク";
+      } else {
+        html.setAttribute("data-theme", "dark");
+        btn.textContent = "☀️ ライト";
+      }
+    }
+    </script>
+  </body>
+</html>

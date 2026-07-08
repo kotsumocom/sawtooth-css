@@ -1,0 +1,264 @@
+/* ==========================================================
+ * Sawtooth CSS — Color Tokens
+ * Generated from primary: #6750A4
+ * HCT color space via @material/material-color-utilities
+ * ========================================================== */
+
+/* --- Reference Tokens (Tonal Palette) --- */
+:root {
+  /* primary tonal palette */
+  --st-ref-primary-0: #000000;
+  --st-ref-primary-4: #13003a;
+  --st-ref-primary-6: #190048;
+  --st-ref-primary-10: #22005d;
+  --st-ref-primary-12: #260661;
+  --st-ref-primary-17: #31166b;
+  --st-ref-primary-20: #381e72;
+  --st-ref-primary-22: #3c2377;
+  --st-ref-primary-24: #41287b;
+  --st-ref-primary-30: #4f378a;
+  --st-ref-primary-40: #6750a4;
+  --st-ref-primary-50: #8069bf;
+  --st-ref-primary-60: #9a83db;
+  --st-ref-primary-70: #b69df7;
+  --st-ref-primary-80: #cfbcff;
+  --st-ref-primary-87: #e1d3ff;
+  --st-ref-primary-90: #e9ddff;
+  --st-ref-primary-92: #eee4ff;
+  --st-ref-primary-94: #f3eaff;
+  --st-ref-primary-95: #f6eeff;
+  --st-ref-primary-96: #f8f1ff;
+  --st-ref-primary-98: #fdf7ff;
+  --st-ref-primary-99: #fffbff;
+  --st-ref-primary-100: #ffffff;
+
+  /* secondary tonal palette */
+  --st-ref-secondary-0: #000000;
+  --st-ref-secondary-4: #100b1d;
+  --st-ref-secondary-6: #151022;
+  --st-ref-secondary-10: #1e192b;
+  --st-ref-secondary-12: #221d2f;
+  --st-ref-secondary-17: #2c273a;
+  --st-ref-secondary-20: #332d41;
+  --st-ref-secondary-22: #373245;
+  --st-ref-secondary-24: #3c364a;
+  --st-ref-secondary-30: #4a4458;
+  --st-ref-secondary-40: #625b71;
+  --st-ref-secondary-50: #7b748a;
+  --st-ref-secondary-60: #958da4;
+  --st-ref-secondary-70: #b0a7c0;
+  --st-ref-secondary-80: #cbc2db;
+  --st-ref-secondary-87: #dfd6ef;
+  --st-ref-secondary-90: #e8def8;
+  --st-ref-secondary-92: #eee4fe;
+  --st-ref-secondary-94: #f3eaff;
+  --st-ref-secondary-95: #f6eeff;
+  --st-ref-secondary-96: #f8f1ff;
+  --st-ref-secondary-98: #fdf7ff;
+  --st-ref-secondary-99: #fffbff;
+  --st-ref-secondary-100: #ffffff;
+
+  /* tertiary tonal palette */
+  --st-ref-tertiary-0: #000000;
+  --st-ref-tertiary-4: #210410;
+  --st-ref-tertiary-6: #270815;
+  --st-ref-tertiary-10: #31101d;
+  --st-ref-tertiary-12: #361421;
+  --st-ref-tertiary-17: #421f2c;
+  --st-ref-tertiary-20: #4a2532;
+  --st-ref-tertiary-22: #4f2936;
+  --st-ref-tertiary-24: #542e3b;
+  --st-ref-tertiary-30: #633b48;
+  --st-ref-tertiary-40: #7e5260;
+  --st-ref-tertiary-50: #996a79;
+  --st-ref-tertiary-60: #b58392;
+  --st-ref-tertiary-70: #d29dad;
+  --st-ref-tertiary-80: #efb8c8;
+  --st-ref-tertiary-87: #ffcddb;
+  --st-ref-tertiary-90: #ffd9e3;
+  --st-ref-tertiary-92: #ffe1e8;
+  --st-ref-tertiary-94: #ffe8ed;
+  --st-ref-tertiary-95: #ffecf0;
+  --st-ref-tertiary-96: #fff0f2;
+  --st-ref-tertiary-98: #fff8f8;
+  --st-ref-tertiary-99: #fffbff;
+  --st-ref-tertiary-100: #ffffff;
+
+  /* neutral tonal palette */
+  --st-ref-neutral-0: #000000;
+  --st-ref-neutral-4: #0f0e11;
+  --st-ref-neutral-6: #141316;
+  --st-ref-neutral-10: #1c1b1e;
+  --st-ref-neutral-12: #201f22;
+  --st-ref-neutral-17: #2b292d;
+  --st-ref-neutral-20: #313033;
+  --st-ref-neutral-22: #363438;
+  --st-ref-neutral-24: #3a383c;
+  --st-ref-neutral-30: #48464a;
+  --st-ref-neutral-40: #605d62;
+  --st-ref-neutral-50: #79767a;
+  --st-ref-neutral-60: #938f94;
+  --st-ref-neutral-70: #aeaaae;
+  --st-ref-neutral-80: #cac5ca;
+  --st-ref-neutral-87: #ddd8dd;
+  --st-ref-neutral-90: #e6e1e6;
+  --st-ref-neutral-92: #ece7eb;
+  --st-ref-neutral-94: #f2ecf1;
+  --st-ref-neutral-95: #f4eff4;
+  --st-ref-neutral-96: #f7f2f7;
+  --st-ref-neutral-98: #fdf8fd;
+  --st-ref-neutral-99: #fffbff;
+  --st-ref-neutral-100: #ffffff;
+
+  /* neutral-variant tonal palette */
+  --st-ref-neutral-variant-0: #000000;
+  --st-ref-neutral-variant-4: #0f0d14;
+  --st-ref-neutral-variant-6: #14121a;
+  --st-ref-neutral-variant-10: #1d1a22;
+  --st-ref-neutral-variant-12: #211e26;
+  --st-ref-neutral-variant-17: #2b2931;
+  --st-ref-neutral-variant-20: #322f38;
+  --st-ref-neutral-variant-22: #36333c;
+  --st-ref-neutral-variant-24: #3b3840;
+  --st-ref-neutral-variant-30: #49454e;
+  --st-ref-neutral-variant-40: #615d66;
+  --st-ref-neutral-variant-50: #7a757f;
+  --st-ref-neutral-variant-60: #948f99;
+  --st-ref-neutral-variant-70: #afa9b4;
+  --st-ref-neutral-variant-80: #cac4cf;
+  --st-ref-neutral-variant-87: #ded8e3;
+  --st-ref-neutral-variant-90: #e7e0eb;
+  --st-ref-neutral-variant-92: #ece6f1;
+  --st-ref-neutral-variant-94: #f2ebf7;
+  --st-ref-neutral-variant-95: #f5eefa;
+  --st-ref-neutral-variant-96: #f8f1fd;
+  --st-ref-neutral-variant-98: #fdf7ff;
+  --st-ref-neutral-variant-99: #fffbff;
+  --st-ref-neutral-variant-100: #ffffff;
+
+  /* error tonal palette */
+  --st-ref-error-0: #000000;
+  --st-ref-error-4: #280000;
+  --st-ref-error-6: #310001;
+  --st-ref-error-10: #410001;
+  --st-ref-error-12: #490001;
+  --st-ref-error-17: #5c0002;
+  --st-ref-error-20: #690003;
+  --st-ref-error-22: #710003;
+  --st-ref-error-24: #790004;
+  --st-ref-error-30: #910809;
+  --st-ref-error-40: #b4271f;
+  --st-ref-error-50: #d74034;
+  --st-ref-error-60: #fa5a4a;
+  --st-ref-error-70: #ff8a7b;
+  --st-ref-error-80: #ffb4aa;
+  --st-ref-error-87: #ffcfc8;
+  --st-ref-error-90: #ffdad5;
+  --st-ref-error-92: #ffe2dd;
+  --st-ref-error-94: #ffe9e6;
+  --st-ref-error-95: #ffedea;
+  --st-ref-error-96: #fff0ee;
+  --st-ref-error-98: #fff8f7;
+  --st-ref-error-99: #fffbff;
+  --st-ref-error-100: #ffffff;
+}
+
+/* --- System Color Tokens (Light Theme — Default) --- */
+:root {
+  --st-sys-color-primary: #6750a4;
+  --st-sys-color-on-primary: #ffffff;
+  --st-sys-color-primary-container: #e9ddff;
+  --st-sys-color-on-primary-container: #22005d;
+  --st-sys-color-secondary: #625b71;
+  --st-sys-color-on-secondary: #ffffff;
+  --st-sys-color-secondary-container: #e8def8;
+  --st-sys-color-on-secondary-container: #1e192b;
+  --st-sys-color-tertiary: #7e5260;
+  --st-sys-color-on-tertiary: #ffffff;
+  --st-sys-color-tertiary-container: #ffd9e3;
+  --st-sys-color-on-tertiary-container: #31101d;
+  --st-sys-color-error: #b4271f;
+  --st-sys-color-on-error: #ffffff;
+  --st-sys-color-error-container: #ffdad5;
+  --st-sys-color-on-error-container: #410001;
+  --st-sys-color-surface: #fffbff;
+  --st-sys-color-on-surface: #1c1b1e;
+  --st-sys-color-surface-variant: #e7e0eb;
+  --st-sys-color-on-surface-variant: #49454e;
+  --st-sys-color-surface-container-lowest: #ffffff;
+  --st-sys-color-surface-container-low: #f7f2f7;
+  --st-sys-color-surface-container: #f2ecf1;
+  --st-sys-color-surface-container-high: #ece7eb;
+  --st-sys-color-surface-container-highest: #e6e1e6;
+  --st-sys-color-outline: #7a757f;
+  --st-sys-color-outline-variant: #cac4cf;
+  --st-sys-color-inverse-surface: #313033;
+  --st-sys-color-inverse-on-surface: #f4eff4;
+}
+
+/* --- System Color Tokens (Dark Theme) --- */
+[data-theme="dark"] {
+  --st-sys-color-primary: #cfbcff;
+  --st-sys-color-on-primary: #381e72;
+  --st-sys-color-primary-container: #4f378a;
+  --st-sys-color-on-primary-container: #e9ddff;
+  --st-sys-color-secondary: #cbc2db;
+  --st-sys-color-on-secondary: #332d41;
+  --st-sys-color-secondary-container: #4a4458;
+  --st-sys-color-on-secondary-container: #e8def8;
+  --st-sys-color-tertiary: #efb8c8;
+  --st-sys-color-on-tertiary: #4a2532;
+  --st-sys-color-tertiary-container: #633b48;
+  --st-sys-color-on-tertiary-container: #ffd9e3;
+  --st-sys-color-error: #ffb4aa;
+  --st-sys-color-on-error: #690003;
+  --st-sys-color-error-container: #910809;
+  --st-sys-color-on-error-container: #ffdad5;
+  --st-sys-color-surface: #1c1b1e;
+  --st-sys-color-on-surface: #e6e1e6;
+  --st-sys-color-surface-variant: #49454e;
+  --st-sys-color-on-surface-variant: #cac4cf;
+  --st-sys-color-surface-container-lowest: #0f0e11;
+  --st-sys-color-surface-container-low: #1c1b1e;
+  --st-sys-color-surface-container: #201f22;
+  --st-sys-color-surface-container-high: #2b292d;
+  --st-sys-color-surface-container-highest: #363438;
+  --st-sys-color-outline: #948f99;
+  --st-sys-color-outline-variant: #49454e;
+  --st-sys-color-inverse-surface: #e6e1e6;
+  --st-sys-color-inverse-on-surface: #313033;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --st-sys-color-primary: #cfbcff;
+    --st-sys-color-on-primary: #381e72;
+    --st-sys-color-primary-container: #4f378a;
+    --st-sys-color-on-primary-container: #e9ddff;
+    --st-sys-color-secondary: #cbc2db;
+    --st-sys-color-on-secondary: #332d41;
+    --st-sys-color-secondary-container: #4a4458;
+    --st-sys-color-on-secondary-container: #e8def8;
+    --st-sys-color-tertiary: #efb8c8;
+    --st-sys-color-on-tertiary: #4a2532;
+    --st-sys-color-tertiary-container: #633b48;
+    --st-sys-color-on-tertiary-container: #ffd9e3;
+    --st-sys-color-error: #ffb4aa;
+    --st-sys-color-on-error: #690003;
+    --st-sys-color-error-container: #910809;
+    --st-sys-color-on-error-container: #ffdad5;
+    --st-sys-color-surface: #1c1b1e;
+    --st-sys-color-on-surface: #e6e1e6;
+    --st-sys-color-surface-variant: #49454e;
+    --st-sys-color-on-surface-variant: #cac4cf;
+    --st-sys-color-surface-container-lowest: #0f0e11;
+    --st-sys-color-surface-container-low: #1c1b1e;
+    --st-sys-color-surface-container: #201f22;
+    --st-sys-color-surface-container-high: #2b292d;
+    --st-sys-color-surface-container-highest: #363438;
+    --st-sys-color-outline: #948f99;
+    --st-sys-color-outline-variant: #49454e;
+    --st-sys-color-inverse-surface: #e6e1e6;
+    --st-sys-color-inverse-on-surface: #313033;
+  }
+}
