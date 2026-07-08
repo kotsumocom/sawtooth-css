@@ -1,0 +1,51 @@
+/* ==========================================================
+ * Sawtooth CSS — Splitter Component (Zag.js)
+ * [data-scope="splitter"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="splitter"][data-part="root"] {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-scope="splitter"][data-part="panel"] {
+  overflow: auto;
+}
+
+[data-scope="splitter"][data-part="resize-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--st-sys-color-outline-variant);
+  flex-shrink: 0;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+/* Horizontal (default) */
+[data-scope="splitter"][data-part="resize-trigger"][data-orientation="horizontal"] {
+  width: 4px;
+  cursor: col-resize;
+}
+
+/* Vertical */
+[data-scope="splitter"][data-part="resize-trigger"][data-orientation="vertical"] {
+  height: 4px;
+  cursor: row-resize;
+}
+
+[data-scope="splitter"][data-part="resize-trigger"]:hover {
+  background-color: var(--st-sys-color-primary);
+}
+
+[data-scope="splitter"][data-part="resize-trigger"][data-focus] {
+  background-color: var(--st-sys-color-primary);
+  outline: none;
+}
+
+[data-scope="splitter"][data-part="resize-trigger"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}

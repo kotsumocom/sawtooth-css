@@ -51,6 +51,15 @@ const COMPONENT_FILES: Record<string, string> = {
   "clipboard": "_clipboard.css",
   "presence": "_presence.css",
   "qr-code": "_qr-code.css",
+  /* Phase 3: Navigation + Layout */
+  "accordion": "_accordion.css",
+  "collapsible": "_collapsible.css",
+  "navigation-menu": "_navigation-menu.css",
+  "pagination": "_pagination.css",
+  "steps": "_steps.css",
+  "segmented-control": "_segmented-control.css",
+  "splitter": "_splitter.css",
+  "scroll-area": "_scroll-area.css",
 };
 
 /**

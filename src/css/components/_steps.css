@@ -1,0 +1,88 @@
+/* ==========================================================
+ * Sawtooth CSS — Steps Component (Zag.js)
+ * [data-scope="steps"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="steps"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-4);
+  width: 100%;
+}
+
+[data-scope="steps"][data-part="list"] {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+[data-scope="steps"][data-part="item"] {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+[data-scope="steps"][data-part="trigger"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--st-sys-spacing-2);
+  border-radius: var(--st-sys-shape-corner-sm);
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="steps"][data-part="trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="steps"][data-part="indicator"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-surface-container-highest);
+  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  flex-shrink: 0;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard),
+    color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="steps"][data-part="item"][data-state="complete"] [data-scope="steps"][data-part="indicator"] {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+[data-scope="steps"][data-part="item"][data-state="current"] [data-scope="steps"][data-part="indicator"] {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+[data-scope="steps"][data-part="separator"] {
+  flex: 1;
+  height: 2px;
+  background-color: var(--st-sys-color-outline-variant);
+  margin: 0 var(--st-sys-spacing-2);
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="steps"][data-part="item"][data-state="complete"] + [data-scope="steps"][data-part="separator"],
+[data-scope="steps"][data-part="separator"][data-complete] {
+  background-color: var(--st-sys-color-primary);
+}
+
+[data-scope="steps"][data-part="content"] {
+  padding: var(--st-sys-spacing-4) 0;
+}

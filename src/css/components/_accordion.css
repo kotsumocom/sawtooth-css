@@ -1,0 +1,98 @@
+/* ==========================================================
+ * Sawtooth CSS — Accordion Component (Zag.js)
+ * [data-scope="accordion"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="accordion"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+[data-scope="accordion"][data-part="item"] {
+  border-bottom: 1px solid var(--st-sys-color-outline-variant);
+}
+
+[data-scope="accordion"][data-part="item-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 3rem;
+  padding: var(--st-sys-spacing-4) 0;
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-body-large-font);
+  font-size: var(--st-sys-typescale-body-large-size);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="accordion"][data-part="item-trigger"]:hover {
+  color: var(--st-sys-color-primary);
+}
+
+[data-scope="accordion"][data-part="item-trigger"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+[data-scope="accordion"][data-part="item-trigger"]:focus-visible {
+  outline: 2px solid var(--st-sys-color-primary);
+  outline-offset: -2px;
+  border-radius: var(--st-sys-shape-corner-xs);
+}
+
+[data-scope="accordion"][data-part="item-indicator"] {
+  transition: transform var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized);
+  flex-shrink: 0;
+}
+
+[data-scope="accordion"][data-part="item-trigger"][data-state="open"] [data-scope="accordion"][data-part="item-indicator"] {
+  transform: rotate(180deg);
+}
+
+[data-scope="accordion"][data-part="item-content"] {
+  overflow: hidden;
+  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--st-sys-typescale-body-medium-font);
+  font-size: var(--st-sys-typescale-body-medium-size);
+  line-height: var(--st-sys-typescale-body-medium-line-height);
+}
+
+[data-scope="accordion"][data-part="item-content"][data-state="open"] {
+  animation: st-accordion-open var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="accordion"][data-part="item-content"][data-state="closed"] {
+  animation: st-accordion-close var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+@keyframes st-accordion-open {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--height);
+    opacity: 1;
+  }
+}
+
+@keyframes st-accordion-close {
+  from {
+    height: var(--height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

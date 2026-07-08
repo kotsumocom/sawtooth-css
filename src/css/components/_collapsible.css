@@ -1,0 +1,62 @@
+/* ==========================================================
+ * Sawtooth CSS — Collapsible Component (Zag.js)
+ * [data-scope="collapsible"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="collapsible"][data-part="root"] {
+  width: 100%;
+}
+
+[data-scope="collapsible"][data-part="trigger"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2);
+  cursor: pointer;
+  color: var(--st-sys-color-primary);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  background: transparent;
+  border: none;
+  padding: var(--st-sys-spacing-2) 0;
+}
+
+[data-scope="collapsible"][data-part="trigger"]:hover {
+  text-decoration: underline;
+}
+
+[data-scope="collapsible"][data-part="content"] {
+  overflow: hidden;
+}
+
+[data-scope="collapsible"][data-part="content"][data-state="open"] {
+  animation: st-collapsible-open var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="collapsible"][data-part="content"][data-state="closed"] {
+  animation: st-collapsible-close var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+@keyframes st-collapsible-open {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--height);
+    opacity: 1;
+  }
+}
+
+@keyframes st-collapsible-close {
+  from {
+    height: var(--height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

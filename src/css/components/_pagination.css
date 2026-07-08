@@ -1,0 +1,57 @@
+/* ==========================================================
+ * Sawtooth CSS — Pagination Component (Zag.js)
+ * [data-scope="pagination"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="pagination"][data-part="root"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1);
+}
+
+[data-scope="pagination"][data-part="item"],
+[data-scope="pagination"][data-part="prev-trigger"],
+[data-scope="pagination"][data-part="next-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 var(--st-sys-spacing-2);
+  border-radius: var(--st-sys-shape-corner-full);
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="pagination"][data-part="item"]:hover,
+[data-scope="pagination"][data-part="prev-trigger"]:hover,
+[data-scope="pagination"][data-part="next-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="pagination"][data-part="item"][data-selected] {
+  background-color: var(--st-sys-color-primary);
+  color: var(--st-sys-color-on-primary);
+}
+
+[data-scope="pagination"][data-part="prev-trigger"][data-disabled],
+[data-scope="pagination"][data-part="next-trigger"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+[data-scope="pagination"][data-part="ellipsis"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  color: var(--st-sys-color-on-surface-variant);
+}

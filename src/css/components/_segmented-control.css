@@ -1,0 +1,55 @@
+/* ==========================================================
+ * Sawtooth CSS — Segmented Control Component (Zag.js)
+ * [data-scope="segmented-control"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="segmented-control"][data-part="root"] {
+  display: inline-flex;
+  position: relative;
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-full);
+  padding: 0.25rem;
+}
+
+[data-scope="segmented-control"][data-part="item"] {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--st-sys-spacing-2);
+  min-height: 2.25rem;
+  padding: 0 var(--st-sys-spacing-4);
+  border-radius: var(--st-sys-shape-corner-full);
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  cursor: pointer;
+  transition: color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="segmented-control"][data-part="item"]:hover {
+  color: var(--st-sys-color-on-surface);
+}
+
+[data-scope="segmented-control"][data-part="item"][data-state="checked"] {
+  color: var(--st-sys-color-on-secondary-container);
+}
+
+[data-scope="segmented-control"][data-part="indicator"] {
+  position: absolute;
+  height: calc(100% - 0.5rem);
+  top: 0.25rem;
+  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--st-sys-color-secondary-container);
+  box-shadow: var(--st-sys-elevation-level1);
+  z-index: 0;
+  transition: left var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized),
+    width var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized);
+}

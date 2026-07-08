@@ -55,5 +55,16 @@
 @import "./components/_presence.css";
 @import "./components/_qr-code.css";
 
+/* --- 3d. Components (Phase 3: Navigation + Layout) --- */
+@import "./components/_accordion.css";
+@import "./components/_collapsible.css";
+/* Menu (Nested) / Context Menu は既存 _menu.css を共用 */
+@import "./components/_navigation-menu.css";
+@import "./components/_pagination.css";
+@import "./components/_steps.css";
+@import "./components/_segmented-control.css";
+@import "./components/_splitter.css";
+@import "./components/_scroll-area.css";
+
 /* --- 4. Utilities --- */
 @import "./utilities/_layout.css";

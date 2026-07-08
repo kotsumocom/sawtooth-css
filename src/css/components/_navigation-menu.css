@@ -1,0 +1,84 @@
+/* ==========================================================
+ * Sawtooth CSS — Navigation Menu Component (Zag.js)
+ * [data-scope="navigation-menu"] セレクタ対応
+ * ========================================================== */
+
+[data-scope="navigation-menu"][data-part="root"] {
+  position: relative;
+}
+
+[data-scope="navigation-menu"][data-part="list"] {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1);
+  list-style: none;
+}
+
+[data-scope="navigation-menu"][data-part="item"] {
+  position: relative;
+}
+
+[data-scope="navigation-menu"][data-part="item-trigger"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1);
+  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
+  border-radius: var(--st-sys-shape-corner-sm);
+  background: transparent;
+  border: none;
+  color: var(--st-sys-color-on-surface);
+  font-family: var(--st-sys-typescale-label-large-font);
+  font-size: var(--st-sys-typescale-label-large-size);
+  font-weight: var(--st-sys-typescale-label-large-weight);
+  cursor: pointer;
+  transition: background-color var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-standard);
+}
+
+[data-scope="navigation-menu"][data-part="item-trigger"]:hover {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+    transparent);
+}
+
+[data-scope="navigation-menu"][data-part="item-trigger"][data-state="open"] {
+  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 12%,
+    transparent);
+}
+
+[data-scope="navigation-menu"][data-part="item-content"] {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 14rem;
+  background-color: var(--st-sys-color-surface-container);
+  border-radius: var(--st-sys-shape-corner-md);
+  box-shadow: var(--st-sys-elevation-level2);
+  padding: var(--st-sys-spacing-2);
+  z-index: 50;
+}
+
+[data-scope="navigation-menu"][data-part="item-content"][data-state="open"] {
+  animation: st-fade-in var(--st-sys-motion-duration-short4)
+    var(--st-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="navigation-menu"][data-part="item-content"][data-state="closed"] {
+  animation: st-fade-out var(--st-sys-motion-duration-short3)
+    var(--st-sys-motion-easing-emphasized-accelerate);
+}
+
+[data-scope="navigation-menu"][data-part="indicator"] {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--st-sys-color-primary);
+  transition: left var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized),
+    width var(--st-sys-motion-duration-medium2)
+    var(--st-sys-motion-easing-emphasized);
+}
+
+[data-scope="navigation-menu"][data-part="viewport"] {
+  position: relative;
+  overflow: hidden;
+}
